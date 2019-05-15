@@ -1,0 +1,2490 @@
+#from grupos import grupo
+import random 
+import tabela
+import resultados
+
+GrupoA = []
+GrupoB = []
+GrupoC = []
+GrupoD = []
+GrupoE = []
+GrupoF = []
+GrupoG = []
+GrupoH = []
+
+selecoes = ['Rússia', 'Brasil', 'Irã', 'Japão', 'México', 'Bélgica', 'Coreia do Sul', 'Arábia Saudita', 'Alemanha', 'Inglaterra', 'Espanha', 'Nigéria', 'Costa Rica','Polônia','Egito','Islândia', 'Sérvia', 'França', 'Portugal', 'Argentina', 'Colômbia', 'Uruguai', 'Panamá', 'Senegal', 'Marrocos', 'Tunísia', 'Suíça', 'Croácia', 'Suécia', 'Dinamarca', 'Austrália', 'Peru']
+blabla = ', '.join(selecoes)
+print("Seleções:\n\n",blabla)
+
+print("="*55,"\nGrupos:\n")
+i = 0
+while i < 4:
+  GrupoA.append(random.choice(selecoes))
+  i+=1
+  for h in GrupoA:
+    for j in  selecoes:
+      if h == j:
+        selecoes.remove(h)
+p1gpAsaida = ', '.join(GrupoA)
+print("Grupo A:", p1gpAsaida)
+print('')
+
+i = 0
+while i < 4:
+  GrupoB.append(random.choice(selecoes))
+  i+=1
+  for h in GrupoB:
+    for j in  selecoes:
+      if h == j:
+        selecoes.remove(h)
+test1=', '.join(GrupoB)
+print("Grupo B:",test1)
+print('')
+
+i = 0
+while i < 4:
+  GrupoC.append(random.choice(selecoes))
+  i+=1
+  for h in GrupoC:
+    for j in  selecoes:
+      if h == j:
+        selecoes.remove(h)
+p2gpAsaida=', '.join(GrupoC)
+print("Grupo C:",p2gpAsaida)
+print('')
+
+i = 0
+while i < 4:
+  GrupoD.append(random.choice(selecoes))
+  i+=1
+  for h in GrupoD:
+    for j in  selecoes:
+      if h == j:
+        selecoes.remove(h)
+p3gpAsaida=', '.join(GrupoD)
+print("Grupo D:",p3gpAsaida)
+print('')
+
+i = 0
+while i < 4:
+  GrupoE.append(random.choice(selecoes))
+  i+=1
+  for h in GrupoE:
+    for j in  selecoes:
+      if h == j:
+        selecoes.remove(h)
+p4gpAsaida=', '.join(GrupoE)
+print("Grupo E:",p4gpAsaida)
+print('')
+
+i = 0
+while i < 4:
+  GrupoF.append(random.choice(selecoes))
+  i+=1
+  for h in GrupoF:
+    for j in  selecoes:
+      if h == j:
+        selecoes.remove(h)
+p5gpAsaida=', '.join(GrupoF)
+print("Grupo F:",p5gpAsaida)
+print('')
+
+i = 0
+while i < 4:
+  GrupoG.append(random.choice(selecoes))
+  i+=1
+  for h in GrupoG:
+    for j in selecoes:
+      if h == j:
+        selecoes.remove(h)
+p6gpAsaida=', '.join(GrupoG)
+print("Grupo G:",p6gpAsaida)
+print('')
+
+i = 0
+while i < 4:
+  GrupoH.append(random.choice(selecoes))
+  i+=1
+  for h in GrupoH:
+    for j in  selecoes:
+      if h == j:
+        selecoes.remove(h)
+test7=', '.join(GrupoH)
+print("Grupo H:",test7)
+print("="*55 , '\nFase de Grupos (Grupo A):\n')
+
+import partidas
+n = 2
+gpA = partidas.comb(GrupoA,n)
+partida1grupoA = []
+partida2grupoA = [] 
+partida3grupoA = []
+partida4grupoA = []
+partida5grupoA = []
+partida6grupoA = []
+partida1grupoA.append(gpA[0])
+partida2grupoA.append(gpA[1])
+partida3grupoA.append(gpA[2])
+partida4grupoA.append(gpA[3])
+partida5grupoA.append(gpA[4])
+partida6grupoA.append(gpA[5])
+
+p1gpAsaida = partidas.delist(partida1grupoA)
+p2gpAsaida = partidas.delist(partida2grupoA)
+p3gpAsaida = partidas.delist(partida3grupoA)
+p4gpAsaida = partidas.delist(partida4grupoA)
+p5gpAsaida = partidas.delist(partida5grupoA)
+p6gpAsaida = partidas.delist(partida6grupoA)
+
+print(' x '.join(p1gpAsaida))
+print(' x '.join(p2gpAsaida))
+print(' x '.join(p3gpAsaida))
+print(' x '.join(p4gpAsaida))
+print(' x '.join(p5gpAsaida))
+print(' x '.join(p6gpAsaida))
+print("="*55,"\nResultados das partidas do grupo A\n")
+
+ngolst1 = 0
+ngolst2 = 0
+
+vit1 = 0
+vit2 = 0
+empt1 = 0
+empt2 = 0
+derrt1 = 0
+derrt2 = 0
+
+import jogo
+from tabela import time
+
+placaraj1gA = jogo.placar(ngolst1,ngolst2)
+pj1gAt1 = placaraj1gA[0]
+pj1gAt2 = placaraj1gA[1]
+jogo1 = jogo.juego(p1gpAsaida[0],p1gpAsaida[1],pj1gAt1,pj1gAt2)
+for i in range(1):  
+  if pj1gAt1>pj1gAt2:
+    vit1+=1
+    derrt2+=1
+  elif pj1gAt1 == pj1gAt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  t1gA = time(p1gpAsaida[0],vit1,empt1,derrt1,pj1gAt1,pj1gAt2)
+  t2gA = time(p1gpAsaida[1],vit2,empt2,derrt2,pj1gAt2,pj1gAt1)
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+placarj2gA = jogo.placar(ngolst1,ngolst2)
+pj2gAt1 = placarj2gA[0]
+pj2gAt2 = placarj2gA[1]
+jogo2 = jogo.juego(p2gpAsaida[0],p2gpAsaida[1],pj2gAt1,pj2gAt2)
+for i in range(1):  
+  if pj2gAt1>pj2gAt2:
+    vit1+=1
+    derrt2+=1
+  elif pj2gAt1 == pj2gAt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  
+  t1gA.vitorias+=vit1
+  t1gA.empates+=empt1
+  t1gA.derrotas+=derrt1
+  t1gA.ngols +=pj2gAt1
+  t1gA.ngolssofridos +=pj2gAt2
+  t3gA = time(p2gpAsaida[1],vit2,empt2,derrt2,pj2gAt2,pj2gAt1)
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+placarj3gA = jogo.placar(ngolst1,ngolst2)
+pj3gAt1 = placarj3gA[0]
+pj3gAt2 = placarj3gA[1]
+jogo3 = jogo.juego(p3gpAsaida[0],p3gpAsaida[1],pj3gAt1,pj3gAt2)
+for i in range(1):
+  if pj3gAt1>pj3gAt2:
+    vit1+=1
+    derrt2+=1
+  elif pj3gAt1 == pj3gAt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  
+  t1gA.vitorias+=vit1
+  t1gA.empates+=empt1
+  t1gA.derrotas+=derrt1
+  t1gA.ngols += pj3gAt1
+  t1gA.ngolssofridos +=pj3gAt2
+  t4gA = time(p3gpAsaida[1],vit2,empt2,derrt2,pj3gAt2,pj3gAt1)
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+placarj4gA = jogo.placar(ngolst1,ngolst2)
+pj4gAt1 = placarj4gA[0]
+pj4gAt2 = placarj4gA[1]
+jogo4 = jogo.juego(p4gpAsaida[0],p4gpAsaida[1],pj4gAt1,pj4gAt2)
+for i in range(1):
+  if pj4gAt1>pj4gAt2:
+    vit1+=1
+    derrt2+=1
+  elif pj4gAt1 == pj4gAt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  
+  t2gA.vitorias+=vit1
+  t2gA.empates+=empt1
+  t2gA.derrotas+=derrt1
+  t2gA.ngols +=pj4gAt1
+  t2gA.ngolssofridos +=pj4gAt2
+  
+  t3gA.vitorias+=vit2
+  t3gA.empates+=empt2
+  t3gA.derrotas+=derrt2
+  t3gA.ngols +=pj4gAt2
+  t3gA.ngolssofridos +=pj4gAt1
+  
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+placarj5gA = jogo.placar(ngolst1,ngolst2)
+pj5gAt1 = placarj5gA[0]
+pj5gAt2 = placarj5gA[1]
+jogo5 = jogo.juego(p5gpAsaida[0],p5gpAsaida[1],pj5gAt1,pj5gAt2)
+for i in range(1):
+  if pj5gAt1>pj5gAt2:
+    vit1+=1
+    derrt2+=1
+  elif pj5gAt1 == pj5gAt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  
+  t2gA.vitorias+=vit1
+  t2gA.empates+=empt1
+  t2gA.derrotas+=derrt1
+  t2gA.ngols +=pj5gAt1
+  t2gA.ngolssofridos +=pj5gAt2
+
+  t4gA.vitorias+=vit2
+  t4gA.empates+=empt2
+  t4gA.derrotas+=derrt2
+  t4gA.ngols +=pj5gAt2
+  t4gA.ngolssofridos +=pj5gAt1
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+placarj6gA = jogo.placar(ngolst1,ngolst2)
+pj6gAt1 = placarj6gA[0]
+pj6gAt2 = placarj6gA[1]
+jogo6 = jogo.juego(p6gpAsaida[0],p6gpAsaida[1],pj6gAt1,pj6gAt2)
+for i in range(1):
+  if pj6gAt1>pj6gAt2:
+    vit1+=1
+    derrt2+=1
+  elif pj6gAt1 == pj6gAt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  
+  
+  t3gA.vitorias+=vit1
+  t3gA.empates+=empt1
+  t3gA.derrotas+=derrt1
+  t3gA.ngols +=pj6gAt1
+  t3gA.ngolssofridos +=pj6gAt2
+  t4gA.vitorias+=vit2
+  t4gA.empates+=empt2
+  t4gA.derrotas+=derrt2
+  t4gA.ngols +=pj6gAt2
+  t4gA.ngolssofridos +=pj6gAt1
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+print("="*55)
+print("\nResultados finais do grupo A")
+print()
+t1gasaldo = tabela.saldo(t1gA.ngols,t1gA.ngolssofridos)
+t1gapontos = tabela.pontos(t1gA.vitorias,t1gA.empates)
+
+t2gasaldo = tabela.saldo(t2gA.ngols,t2gA.ngolssofridos)
+t2gapontos = tabela.pontos(t2gA.vitorias,t2gA.empates)
+
+t3gasaldo = tabela.saldo(t3gA.ngols,t3gA.ngolssofridos)
+t3gapontos = tabela.pontos(t3gA.vitorias,t3gA.empates)
+
+t4gasaldo = tabela.saldo(t4gA.ngols,t4gA.ngolssofridos)
+t4gapontos = tabela.pontos(t4gA.vitorias,t4gA.empates)
+ 
+
+rest1gA = resultados.results(t1gA.nome,t1gA.vitorias,t1gA.empates,t1gA.derrotas,t1gasaldo,t1gapontos,t1gA.ngols,t1gA.ngolssofridos)
+
+rest2ga = resultados.results(t2gA.nome,t2gA.vitorias,t2gA.empates,t2gA.derrotas,t2gasaldo,t2gapontos,t2gA.ngols,t2gA.ngolssofridos)
+
+rest3ga = resultados.results(t3gA.nome,t3gA.vitorias,t3gA.empates,t3gA.derrotas,t3gasaldo,t3gapontos,t3gA.ngols,t3gA.ngolssofridos)
+
+rest4ga = resultados.results(t4gA.nome,t4gA.vitorias,t4gA.empates,t4gA.derrotas,t4gasaldo,t4gapontos,t4gA.ngols,t4gA.ngolssofridos)
+
+
+
+print("="*55 , '\nFase de Grupos (Grupo B):\n')
+gpB = partidas.comb(GrupoB,n)
+partida1grupoB = []
+partida2grupoB = [] 
+partida3grupoB = []
+partida4grupoB = []
+partida5grupoB = []
+partida6grupoB = []
+partida1grupoB.append(gpB[0])
+partida2grupoB.append(gpB[1])
+partida3grupoB.append(gpB[2])
+partida4grupoB.append(gpB[3])
+partida5grupoB.append(gpB[4])
+partida6grupoB.append(gpB[5])
+
+p1gpBsaida = partidas.delist(partida1grupoB)
+p2gpBsaida = partidas.delist(partida2grupoB)
+p3gpBsaida = partidas.delist(partida3grupoB)
+p4gpBsaida = partidas.delist(partida4grupoB)
+p5gpBsaida = partidas.delist(partida5grupoB)
+p6gpBsaida = partidas.delist(partida6grupoB)
+
+print(' x '.join(p1gpBsaida))
+print(' x '.join(p2gpBsaida))
+print(' x '.join(p3gpBsaida))
+print(' x '.join(p4gpBsaida))
+print(' x '.join(p5gpBsaida))
+print(' x '.join(p6gpBsaida))
+print("="*55,"\nResultados das partidas do grupo B\n")
+
+placaraj1gB = jogo.placar(ngolst1,ngolst2)
+pj1gBt1 = placaraj1gB[0]
+pj1gBt2 = placaraj1gB[1]
+jogo1 = jogo.juego(p1gpBsaida[0],p1gpBsaida[1],pj1gBt1,pj1gBt2)
+for i in range(1):  
+  if pj1gBt1>pj1gBt2:
+    vit1+=1
+    derrt2+=1
+  elif pj1gBt1 == pj1gBt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  t1gB = time(p1gpBsaida[0],vit1,empt1,derrt1,pj1gBt1,pj1gBt2)
+  t2gB = time(p1gpBsaida[1],vit2,empt2,derrt2,pj1gBt2,pj1gBt1)
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+placarj2gB = jogo.placar(ngolst1,ngolst2)
+pj2gBt1 = placarj2gB[0]
+pj2gBt2 = placarj2gB[1]
+jogo2 = jogo.juego(p2gpBsaida[0],p2gpBsaida[1],pj2gBt1,pj2gBt2)
+for i in range(1):  
+  if pj2gBt1>pj2gBt2:
+    vit1+=1
+    derrt2+=1
+  elif pj2gBt1 == pj2gBt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  
+  
+  t1gB.vitorias+=vit1
+  t1gB.empates+=empt1
+  t1gB.derrotas+=derrt1
+  t1gB.ngols +=pj2gBt1
+  t1gB.ngolssofridos +=pj2gBt2
+  t3gB = time(p2gpBsaida[1],vit2,empt2,derrt2,pj2gBt2,pj2gBt1)
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+placarj3gB = jogo.placar(ngolst1,ngolst2)
+pj3gBt1 = placarj3gB[0]
+pj3gBt2 = placarj3gB[1]
+jogo3 = jogo.juego(p3gpBsaida[0],p3gpBsaida[1],pj3gBt1,pj3gBt2)
+for i in range(1):
+  if pj3gBt1>pj3gBt2:
+    vit1+=1
+    derrt2+=1
+  elif pj3gBt1 == pj3gBt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  
+  
+  t1gB.vitorias+=vit1
+  t1gB.empates+=empt1
+  t1gB.derrotas+=derrt1
+  t1gB.ngols += pj3gBt1
+  t1gB.ngolssofridos +=pj3gBt2
+  t4gB = time(p3gpBsaida[1],vit2,empt2,derrt2,pj3gBt2,pj3gBt1)
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+placarj4gB = jogo.placar(ngolst1,ngolst2)
+pj4gBt1 = placarj4gB[0]
+pj4gBt2 = placarj4gB[1]
+jogo4 = jogo.juego(p4gpBsaida[0],p4gpBsaida[1],pj4gBt1,pj4gBt2)
+for i in range(1):
+  if pj4gBt1>pj4gBt2:
+    vit1+=1
+    derrt2+=1
+  elif pj4gBt1 == pj4gBt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  
+  
+  t2gB.vitorias+=vit1
+  t2gB.empates+=empt1
+  t2gB.derrotas+=derrt1
+  t2gB.ngols +=pj4gBt1
+  t2gB.ngolssofridos +=pj4gBt2
+
+  
+  t3gB.vitorias+=vit2
+  t3gB.empates+=empt2
+  t3gB.derrotas+=derrt2
+  t3gB.ngols +=pj4gBt2
+  t3gB.ngolssofridos +=pj4gBt1
+  
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+placarj5gB = jogo.placar(ngolst1,ngolst2)
+pj5gBt1 = placarj5gB[0]
+pj5gBt2 = placarj5gB[1]
+jogo5 = jogo.juego(p5gpBsaida[0],p5gpBsaida[1],pj5gBt1,pj5gBt2)
+for i in range(1):
+  if pj5gBt1>pj5gBt2:
+    vit1+=1
+    derrt2+=1
+  elif pj5gBt1 == pj5gBt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  
+  
+  t2gB.vitorias+=vit1
+  t2gB.empates+=empt1
+  t2gB.derrotas+=derrt1
+  t2gB.ngols +=pj5gBt1
+  t2gB.ngolssofridos +=pj5gBt2
+  
+  t4gB.vitorias+=vit2
+  t4gB.empates+=empt2
+  t4gB.derrotas+=derrt2
+  t4gB.ngols +=pj5gBt2
+  t4gB.ngolssofridos +=pj5gBt1
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+placarj6gB = jogo.placar(ngolst1,ngolst2)
+pj6gBt1 = placarj6gB[0]
+pj6gBt2 = placarj6gB[1]
+jogo6 = jogo.juego(p6gpBsaida[0],p6gpBsaida[1],pj6gBt1,pj6gBt2)
+for i in range(1):
+  if pj6gBt1>pj6gBt2:
+    vit1+=1
+    derrt2+=1
+  elif pj6gBt1 == pj6gBt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  
+  
+  t3gB.vitorias+=vit1
+  t3gB.empates+=empt1
+  t3gB.derrotas+=derrt1
+  t3gB.ngols +=pj6gBt1
+  t3gB.ngolssofridos +=pj6gBt2
+
+  t4gB.vitorias+=vit2
+  t4gB.empates+=empt2
+  t4gB.derrotas+=derrt2
+  t4gB.ngols +=pj6gBt2
+  t4gB.ngolssofridos +=pj6gBt1
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+print("="*55)
+print("\nResultados finais do grupo B")
+print()
+t1gbsaldo = tabela.saldo(t1gB.ngols,t1gB.ngolssofridos)
+t1gbpontos = tabela.pontos(t1gB.vitorias,t1gB.empates)
+
+t2gbsaldo = tabela.saldo(t2gB.ngols,t2gB.ngolssofridos)
+t2gbpontos = tabela.pontos(t2gB.vitorias,t2gB.empates)
+
+t3gbsaldo = tabela.saldo(t3gB.ngols,t3gB.ngolssofridos)
+t3gbpontos = tabela.pontos(t3gB.vitorias,t3gB.empates)
+
+t4gbsaldo = tabela.saldo(t4gB.ngols,t4gB.ngolssofridos)
+t4gbpontos = tabela.pontos(t4gB.vitorias,t4gB.empates)
+ 
+rest1gB = resultados.results(t1gB.nome,t1gB.vitorias,t1gB.empates,t1gB.derrotas,t1gbsaldo,t1gbpontos,t1gB.ngols,t1gB.ngolssofridos)
+
+rest2gb = resultados.results(t2gB.nome,t2gB.vitorias,t2gB.empates,t2gB.derrotas,t2gbsaldo,t2gbpontos,t2gB.ngols,t2gB.ngolssofridos)
+
+rest3gb = resultados.results(t3gB.nome,t3gB.vitorias,t3gB.empates,t3gB.derrotas,t3gbsaldo,t3gbpontos,t3gB.ngols,t3gB.ngolssofridos)
+
+rest4gb = resultados.results(t4gB.nome,t4gB.vitorias,t4gB.empates,t4gB.derrotas,t4gbsaldo,t4gbpontos,t4gB.ngols,t4gB.ngolssofridos)
+
+print()
+print("="*55 , '\nFase de Grupos (Grupo C):\n')
+gpC = partidas.comb(GrupoC,n)
+partida1grupoC = []
+partida2grupoC = [] 
+partida3grupoC = []
+partida4grupoC = []
+partida5grupoC = []
+partida6grupoC = []
+partida1grupoC.append(gpC[0])
+partida2grupoC.append(gpC[1])
+partida3grupoC.append(gpC[2])
+partida4grupoC.append(gpC[3])
+partida5grupoC.append(gpC[4])
+partida6grupoC.append(gpC[5])
+
+p1gpCsaida = partidas.delist(partida1grupoC)
+p2gpCsaida = partidas.delist(partida2grupoC)
+p3gpCsaida = partidas.delist(partida3grupoC)
+p4gpCsaida = partidas.delist(partida4grupoC)
+p5gpCsaida = partidas.delist(partida5grupoC)
+p6gpCsaida = partidas.delist(partida6grupoC)
+
+print(' x '.join(p1gpCsaida))
+print(' x '.join(p2gpCsaida))
+print(' x '.join(p3gpCsaida))
+print(' x '.join(p4gpCsaida))
+print(' x '.join(p5gpCsaida))
+print(' x '.join(p6gpCsaida))
+print("="*55,"\nResultados das partidas do grupo C\n")
+
+placaraj1gC = jogo.placar(ngolst1,ngolst2)
+pj1gCt1 = placaraj1gC[0]
+pj1gCt2 = placaraj1gC[1]
+jogo1 = jogo.juego(p1gpCsaida[0],p1gpCsaida[1],pj1gCt1,pj1gCt2)
+for i in range(1):  
+  if pj1gCt1>pj1gCt2:
+    vit1+=1
+    derrt2+=1
+  elif pj1gCt1 == pj1gCt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  t1gC = time(p1gpCsaida[0],vit1,empt1,derrt1,pj1gCt1,pj1gCt2)
+  t2gC = time(p1gpCsaida[1],vit2,empt2,derrt2,pj1gCt2,pj1gCt1)
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+placarj2gC = jogo.placar(ngolst1,ngolst2)
+pj2gCt1 = placarj2gC[0]
+pj2gCt2 = placarj2gC[1]
+jogo2 = jogo.juego(p2gpCsaida[0],p2gpCsaida[1],pj2gCt1,pj2gCt2)
+for i in range(1):  
+  if pj2gCt1>pj2gCt2:
+    vit1+=1
+    derrt2+=1
+  elif pj2gCt1 == pj2gCt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  
+  
+  t1gC.vitorias+=vit1
+  t1gC.empates+=empt1
+  t1gC.derrotas+=derrt1
+  t1gC.ngols +=pj2gCt1
+  t1gC.ngolssofridos +=pj2gCt2
+  t3gC = time(p2gpCsaida[1],vit2,empt2,derrt2,pj2gCt2,pj2gCt1)
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+placarj3gC = jogo.placar(ngolst1,ngolst2)
+pj3gCt1 = placarj3gC[0]
+pj3gCt2 = placarj3gC[1]
+jogo3 = jogo.juego(p3gpCsaida[0],p3gpCsaida[1],pj3gCt1,pj3gCt2)
+for i in range(1):
+  if pj3gCt1>pj3gCt2:
+    vit1+=1
+    derrt2+=1
+  elif pj3gCt1 == pj3gCt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  
+  
+  t1gC.vitorias+=vit1
+  t1gC.empates+=empt1
+  t1gC.derrotas+=derrt1
+  t1gC.ngols += pj3gCt1
+  t1gC.ngolssofridos +=pj3gCt2
+  t4gC = time(p3gpCsaida[1],vit2,empt2,derrt2,pj3gCt2,pj3gCt1)
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+placarj4gC = jogo.placar(ngolst1,ngolst2)
+pj4gCt1 = placarj4gC[0]
+pj4gCt2 = placarj4gC[1]
+jogo4 = jogo.juego(p4gpCsaida[0],p4gpCsaida[1],pj4gCt1,pj4gCt2)
+for i in range(1):
+  if pj4gCt1>pj4gCt2:
+    vit1+=1
+    derrt2+=1
+  elif pj4gCt1 == pj4gCt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  
+  
+  t2gC.vitorias+=vit1
+  t2gC.empates+=empt1
+  t2gC.derrotas+=derrt1
+  t2gC.ngols +=pj4gCt1
+  t2gC.ngolssofridos +=pj4gCt2
+
+  t3gC.vitorias+=vit2
+  t3gC.empates+=empt2
+  t3gC.derrotas+=derrt2
+  t3gC.ngols +=pj4gCt2
+  t3gC.ngolssofridos +=pj4gCt1
+  
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+placarj5gC = jogo.placar(ngolst1,ngolst2)
+pj5gCt1 = placarj5gC[0]
+pj5gCt2 = placarj5gC[1]
+jogo5 = jogo.juego(p5gpCsaida[0],p5gpCsaida[1],pj5gCt1,pj5gCt2)
+for i in range(1):
+  if pj5gCt1>pj5gCt2:
+    vit1+=1
+    derrt2+=1
+  elif pj5gCt1 == pj5gCt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  
+  t2gC.vitorias+=vit1
+  t2gC.empates+=empt1
+  t2gC.derrotas+=derrt1
+  t2gC.ngols +=pj5gCt1
+  t2gC.ngolssofridos +=pj5gCt2
+
+  t4gC.vitorias+=vit2
+  t4gC.empates+=empt2
+  t4gC.derrotas+=derrt2
+  t4gC.ngols +=pj5gCt2
+  t4gC.ngolssofridos +=pj5gCt1
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+placarj6gC = jogo.placar(ngolst1,ngolst2)
+pj6gCt1 = placarj6gC[0]
+pj6gCt2 = placarj6gC[1]
+jogo6 = jogo.juego(p6gpCsaida[0],p6gpCsaida[1],pj6gCt1,pj6gCt2)
+for i in range(1):
+  if pj6gCt1>pj6gCt2:
+    vit1+=1
+    derrt2+=1
+  elif pj6gCt1 == pj6gCt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  
+  t3gC.vitorias+=vit1
+  t3gC.empates+=empt1
+  t3gC.derrotas+=derrt1
+  t3gC.ngols +=pj6gCt1
+  t3gC.ngolssofridos +=pj6gCt2
+
+  t4gC.vitorias+=vit2
+  t4gC.empates+=empt2
+  t4gC.derrotas+=derrt2
+  t4gC.ngols +=pj6gCt2
+  t4gC.ngolssofridos +=pj6gCt1
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+print("="*55)
+print("\nResultados finais do grupo C")
+print()
+t1gcsaldo = tabela.saldo(t1gC.ngols,t1gC.ngolssofridos)
+t1gcpontos = tabela.pontos(t1gC.vitorias,t1gC.empates)
+
+t2gcsaldo = tabela.saldo(t2gC.ngols,t2gC.ngolssofridos)
+t2gcpontos = tabela.pontos(t2gC.vitorias,t2gC.empates)
+
+t3gcsaldo = tabela.saldo(t3gC.ngols,t3gC.ngolssofridos)
+t3gcpontos = tabela.pontos(t3gC.vitorias,t3gC.empates)
+
+t4gcsaldo = tabela.saldo(t4gC.ngols,t4gC.ngolssofridos)
+t4gcpontos = tabela.pontos(t4gC.vitorias,t4gC.empates)
+ 
+
+rest1gC = resultados.results(t1gC.nome,t1gC.vitorias,t1gC.empates,t1gC.derrotas,t1gcsaldo,t1gcpontos,t1gC.ngols,t1gC.ngolssofridos)
+
+rest2gc = resultados.results(t2gC.nome,t2gC.vitorias,t2gC.empates,t2gC.derrotas,t2gcsaldo,t2gcpontos,t2gC.ngols,t2gC.ngolssofridos)
+
+rest3gc = resultados.results(t3gC.nome,t3gC.vitorias,t3gC.empates,t3gC.derrotas,t3gcsaldo,t3gcpontos,t3gC.ngols,t3gC.ngolssofridos)
+
+rest4gc = resultados.results(t4gC.nome,t4gC.vitorias,t4gC.empates,t4gC.derrotas,t4gcsaldo,t4gcpontos,t4gC.ngols,t4gC.ngolssofridos)
+
+print()
+
+print("="*55 , '\nFase de Grupos (Grupo D):\n')
+gpD = partidas.comb(GrupoD,n)
+partida1grupoD = []
+partida2grupoD = [] 
+partida3grupoD = []
+partida4grupoD = []
+partida5grupoD = []
+partida6grupoD = []
+partida1grupoD.append(gpD[0])
+partida2grupoD.append(gpD[1])
+partida3grupoD.append(gpD[2])
+partida4grupoD.append(gpD[3])
+partida5grupoD.append(gpD[4])
+partida6grupoD.append(gpD[5])
+
+p1gpDsaida = partidas.delist(partida1grupoD)
+p2gpDsaida = partidas.delist(partida2grupoD)
+p3gpDsaida = partidas.delist(partida3grupoD)
+p4gpDsaida = partidas.delist(partida4grupoD)
+p5gpDsaida = partidas.delist(partida5grupoD)
+p6gpDsaida = partidas.delist(partida6grupoD)
+
+print(' x '.join(p1gpDsaida))
+print(' x '.join(p2gpDsaida))
+print(' x '.join(p3gpDsaida))
+print(' x '.join(p4gpDsaida))
+print(' x '.join(p5gpDsaida))
+print(' x '.join(p6gpDsaida))
+print("="*55,"\nResultados das partidas do grupo D\n")
+
+placaraj1gD = jogo.placar(ngolst1,ngolst2)
+pj1gDt1 = placaraj1gD[0]
+pj1gDt2 = placaraj1gD[1]
+jogo1 = jogo.juego(p1gpDsaida[0],p1gpDsaida[1],pj1gDt1,pj1gDt2)
+for i in range(1):  
+  if pj1gDt1>pj1gDt2:
+    vit1+=1
+    derrt2+=1
+  elif pj1gDt1 == pj1gDt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  t1gD = time(p1gpDsaida[0],vit1,empt1,derrt1,pj1gDt1,pj1gDt2)
+  t2gD = time(p1gpDsaida[1],vit2,empt2,derrt2,pj1gDt2,pj1gDt1)
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+placarj2gD = jogo.placar(ngolst1,ngolst2)
+pj2gDt1 = placarj2gD[0]
+pj2gDt2 = placarj2gD[1]
+jogo2 = jogo.juego(p2gpDsaida[0],p2gpDsaida[1],pj2gDt1,pj2gDt2)
+for i in range(1):  
+  if pj2gDt1>pj2gDt2:
+    vit1+=1
+    derrt2+=1
+  elif pj2gDt1 == pj2gDt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  
+  t1gD.vitorias+=vit1
+  t1gD.empates+=empt1
+  t1gD.derrotas+=derrt1
+  t1gD.ngols +=pj2gDt1
+  t1gD.ngolssofridos +=pj2gDt2
+  t3gD = time(p2gpDsaida[1],vit2,empt2,derrt2,pj2gDt2,pj2gDt1)
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+placarj3gD = jogo.placar(ngolst1,ngolst2)
+pj3gDt1 = placarj3gD[0]
+pj3gDt2 = placarj3gD[1]
+jogo3 = jogo.juego(p3gpDsaida[0],p3gpDsaida[1],pj3gDt1,pj3gDt2)
+for i in range(1):
+  if pj3gDt1>pj3gDt2:
+    vit1+=1
+    derrt2+=1
+  elif pj3gDt1 == pj3gDt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  
+  t1gD.vitorias+=vit1
+  t1gD.empates+=empt1
+  t1gD.derrotas+=derrt1
+  t1gD.ngols += pj3gDt1
+  t1gD.ngolssofridos +=pj3gDt2
+  t4gD = time(p3gpDsaida[1],vit2,empt2,derrt2,pj3gDt2,pj3gDt1)
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+placarj4gD = jogo.placar(ngolst1,ngolst2)
+pj4gDt1 = placarj4gD[0]
+pj4gDt2 = placarj4gD[1]
+jogo4 = jogo.juego(p4gpDsaida[0],p4gpDsaida[1],pj4gDt1,pj4gDt2)
+for i in range(1):
+  if pj4gDt1>pj4gDt2:
+    vit1+=1
+    derrt2+=1
+  elif pj4gDt1 == pj4gDt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  
+  t2gD.vitorias+=vit1
+  t2gD.empates+=empt1
+  t2gD.derrotas+=derrt1
+  t2gD.ngols +=pj4gDt1
+  t2gD.ngolssofridos +=pj4gDt2
+
+  t3gD.vitorias+=vit2
+  t3gD.empates+=empt2
+  t3gD.derrotas+=derrt2
+  t3gD.ngols +=pj4gDt2
+  t3gD.ngolssofridos +=pj4gDt1
+  
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+placarj5gD = jogo.placar(ngolst1,ngolst2)
+pj5gDt1 = placarj5gD[0]
+pj5gDt2 = placarj5gD[1]
+jogo5 = jogo.juego(p5gpDsaida[0],p5gpDsaida[1],pj5gDt1,pj5gDt2)
+for i in range(1):
+  if pj5gDt1>pj5gDt2:
+    vit1+=1
+    derrt2+=1
+  elif pj5gDt1 == pj5gDt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  
+  t2gD.vitorias+=vit1
+  t2gD.empates+=empt1
+  t2gD.derrotas+=derrt1
+  t2gD.ngols +=pj5gDt1
+  t2gD.ngolssofridos +=pj5gDt2
+
+  t4gD.vitorias+=vit2
+  t4gD.empates+=empt2
+  t4gD.derrotas+=derrt2
+  t4gD.ngols +=pj5gDt2
+  t4gD.ngolssofridos +=pj5gDt1
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+placarj6gD = jogo.placar(ngolst1,ngolst2)
+pj6gDt1 = placarj6gD[0]
+pj6gDt2 = placarj6gD[1]
+jogo6 = jogo.juego(p6gpDsaida[0],p6gpDsaida[1],pj6gDt1,pj6gDt2)
+for i in range(1):
+  if pj6gDt1>pj6gDt2:
+    vit1+=1
+    derrt2+=1
+  elif pj6gDt1 == pj6gDt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  
+  t3gD.vitorias+=vit1
+  t3gD.empates+=empt1
+  t3gD.derrotas+=derrt1
+  t3gD.ngols +=pj6gDt1
+  t3gD.ngolssofridos +=pj6gDt2
+
+  t4gD.vitorias+=vit2
+  t4gD.empates+=empt2
+  t4gD.derrotas+=derrt2
+  t4gD.ngols +=pj6gDt2
+  t4gD.ngolssofridos +=pj6gDt1
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+
+print("="*55)
+print("\nResultados finais do grupo D")
+print()
+t1gdsaldo = tabela.saldo(t1gD.ngols,t1gD.ngolssofridos)
+t1gdpontos = tabela.pontos(t1gD.vitorias,t1gD.empates)
+
+t2gdsaldo = tabela.saldo(t2gD.ngols,t2gD.ngolssofridos)
+t2gdpontos = tabela.pontos(t2gD.vitorias,t2gD.empates)
+
+t3gdsaldo = tabela.saldo(t3gD.ngols,t3gD.ngolssofridos)
+t3gdpontos = tabela.pontos(t3gD.vitorias,t3gD.empates)
+
+t4gdsaldo = tabela.saldo(t4gD.ngols,t4gD.ngolssofridos)
+t4gdpontos = tabela.pontos(t4gD.vitorias,t4gD.empates)
+ 
+
+rest1gD = resultados.results(t1gD.nome,t1gD.vitorias,t1gD.empates,t1gD.derrotas,t1gdsaldo,t1gdpontos,t1gD.ngols,t1gD.ngolssofridos)
+
+rest2gd = resultados.results(t2gD.nome,t2gD.vitorias,t2gD.empates,t2gD.derrotas,t2gdsaldo,t2gdpontos,t2gD.ngols,t2gD.ngolssofridos)
+
+rest3gd = resultados.results(t3gD.nome,t3gD.vitorias,t3gD.empates,t3gD.derrotas,t3gdsaldo,t3gdpontos,t3gD.ngols,t3gD.ngolssofridos)
+
+rest4gd = resultados.results(t4gD.nome,t4gD.vitorias,t4gD.empates,t4gD.derrotas,t4gdsaldo,t4gdpontos,t4gD.ngols,t4gD.ngolssofridos)
+
+print()
+
+print("="*55 , '\nFase de Grupos (Grupo E):\n')
+gpE = partidas.comb(GrupoE,n)
+partida1grupoE = []
+partida2grupoE = [] 
+partida3grupoE = []
+partida4grupoE = []
+partida5grupoE = []
+partida6grupoE = []
+partida1grupoE.append(gpE[0])
+partida2grupoE.append(gpE[1])
+partida3grupoE.append(gpE[2])
+partida4grupoE.append(gpE[3])
+partida5grupoE.append(gpE[4])
+partida6grupoE.append(gpE[5])
+
+p1gpEsaida = partidas.delist(partida1grupoE)
+p2gpEsaida = partidas.delist(partida2grupoE)
+p3gpEsaida = partidas.delist(partida3grupoE)
+p4gpEsaida = partidas.delist(partida4grupoE)
+p5gpEsaida = partidas.delist(partida5grupoE)
+p6gpEsaida = partidas.delist(partida6grupoE)
+
+print(' x '.join(p1gpEsaida))
+print(' x '.join(p2gpEsaida))
+print(' x '.join(p3gpEsaida))
+print(' x '.join(p4gpEsaida))
+print(' x '.join(p5gpEsaida))
+print(' x '.join(p6gpEsaida))
+print("="*55,"\nResultados das partidas do grupo E\n")
+
+placaraj1gE = jogo.placar(ngolst1,ngolst2)
+pj1gEt1 = placaraj1gE[0]
+pj1gEt2 = placaraj1gE[1]
+jogo1 = jogo.juego(p1gpEsaida[0],p1gpEsaida[1],pj1gEt1,pj1gEt2)
+for i in range(1):  
+  if pj1gEt1>pj1gEt2:
+    vit1+=1
+    derrt2+=1
+  elif pj1gEt1 == pj1gEt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  t1gE = time(p1gpEsaida[0],vit1,empt1,derrt1,pj1gEt1,pj1gEt2)
+  t2gE = time(p1gpEsaida[1],vit2,empt2,derrt2,pj1gEt2,pj1gEt1)
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+placarj2gE = jogo.placar(ngolst1,ngolst2)
+pj2gEt1 = placarj2gE[0]
+pj2gEt2 = placarj2gE[1]
+jogo2 = jogo.juego(p2gpEsaida[0],p2gpEsaida[1],pj2gEt1,pj2gEt2)
+for i in range(1):  
+  if pj2gEt1>pj2gEt2:
+    vit1+=1
+    derrt2+=1
+  elif pj2gEt1 == pj2gEt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  
+  t1gE.vitorias+=vit1
+  t1gE.empates+=empt1
+  t1gE.derrotas+=derrt1
+  t1gE.ngols +=pj2gEt1
+  t1gE.ngolssofridos +=pj2gEt2
+  t3gE = time(p2gpEsaida[1],vit2,empt2,derrt2,pj2gEt2,pj2gEt1)
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+placarj3gE = jogo.placar(ngolst1,ngolst2)
+pj3gEt1 = placarj3gE[0]
+pj3gEt2 = placarj3gE[1]
+jogo3 = jogo.juego(p3gpEsaida[0],p3gpEsaida[1],pj3gEt1,pj3gEt2)
+for i in range(1):
+  if pj3gEt1>pj3gEt2:
+    vit1+=1
+    derrt2+=1
+  elif pj3gEt1 == pj3gEt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  
+  t1gE.vitorias+=vit1
+  t1gE.empates+=empt1
+  t1gE.derrotas+=derrt1
+  t1gE.ngols += pj3gEt1
+  t1gE.ngolssofridos +=pj3gEt2
+  t4gE = time(p3gpEsaida[1],vit2,empt2,derrt2,pj3gEt2,pj3gEt1)
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+placarj4gE = jogo.placar(ngolst1,ngolst2)
+pj4gEt1 = placarj4gE[0]
+pj4gEt2 = placarj4gE[1]
+jogo4 = jogo.juego(p4gpEsaida[0],p4gpEsaida[1],pj4gEt1,pj4gEt2)
+for i in range(1):
+  if pj4gEt1>pj4gEt2:
+    vit1+=1
+    derrt2+=1
+  elif pj4gEt1 == pj4gEt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  t2gE.vitorias+=vit1
+  t2gE.empates+=empt1
+  t2gE.derrotas+=derrt1
+  t2gE.ngols +=pj4gEt1
+  t2gE.ngolssofridos +=pj4gEt2
+  t3gE.vitorias+=vit2
+  t3gE.empates+=empt2
+  t3gE.derrotas+=derrt2
+  t3gE.ngols +=pj4gEt2
+  t3gE.ngolssofridos +=pj4gEt1
+  
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+placarj5gE = jogo.placar(ngolst1,ngolst2)
+pj5gEt1 = placarj5gE[0]
+pj5gEt2 = placarj5gE[1]
+jogo5 = jogo.juego(p5gpEsaida[0],p5gpEsaida[1],pj5gEt1,pj5gEt2)
+for i in range(1):
+  if pj5gEt1>pj5gEt2:
+    vit1+=1
+    derrt2+=1
+  elif pj5gEt1 == pj5gEt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  
+  t2gE.vitorias+=vit1
+  t2gE.empates+=empt1
+  t2gE.derrotas+=derrt1
+  t2gE.ngols +=pj5gEt1
+  t2gE.ngolssofridos +=pj5gEt2
+
+  t4gE.vitorias+=vit2
+  t4gE.empates+=empt2
+  t4gE.derrotas+=derrt2
+  t4gE.ngols +=pj5gEt2
+  t4gE.ngolssofridos +=pj5gEt1
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+placarj6gE = jogo.placar(ngolst1,ngolst2)
+pj6gEt1 = placarj6gE[0]
+pj6gEt2 = placarj6gE[1]
+jogo6 = jogo.juego(p6gpEsaida[0],p6gpEsaida[1],pj6gEt1,pj6gEt2)
+for i in range(1):
+  if pj6gEt1>pj6gEt2:
+    vit1+=1
+    derrt2+=1
+  elif pj6gEt1 == pj6gEt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  t3gE.vitorias+=vit1
+  t3gE.empates+=empt1
+  t3gE.derrotas+=derrt1
+  t3gE.ngols +=pj6gEt1
+  t3gE.ngolssofridos +=pj6gEt2
+  t4gE.vitorias+=vit2
+  t4gE.empates+=empt2
+  t4gE.derrotas+=derrt2
+  t4gE.ngols +=pj6gEt2
+  t4gE.ngolssofridos +=pj6gEt1
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+print("="*55)
+print("\nResultados finais do grupo E")
+print()
+t1gesaldo = tabela.saldo(t1gE.ngols,t1gE.ngolssofridos)
+t1gepontos = tabela.pontos(t1gE.vitorias,t1gE.empates)
+
+t2gesaldo = tabela.saldo(t2gE.ngols,t2gE.ngolssofridos)
+t2gepontos = tabela.pontos(t2gE.vitorias,t2gE.empates)
+
+t3gesaldo = tabela.saldo(t3gE.ngols,t3gE.ngolssofridos)
+t3gepontos = tabela.pontos(t3gE.vitorias,t3gE.empates)
+
+t4gesaldo = tabela.saldo(t4gE.ngols,t4gE.ngolssofridos)
+t4gepontos = tabela.pontos(t4gE.vitorias,t4gE.empates)
+ 
+
+rest1gE = resultados.results(t1gE.nome,t1gE.vitorias,t1gE.empates,t1gE.derrotas,t1gesaldo,t1gepontos,t1gE.ngols,t1gE.ngolssofridos)
+
+rest2ge = resultados.results(t2gE.nome,t2gE.vitorias,t2gE.empates,t2gE.derrotas,t2gesaldo,t2gepontos,t2gE.ngols,t2gE.ngolssofridos)
+
+rest3ge = resultados.results(t3gE.nome,t3gE.vitorias,t3gE.empates,t3gE.derrotas,t3gesaldo,t3gepontos,t3gE.ngols,t3gE.ngolssofridos)
+
+rest4ge = resultados.results(t4gE.nome,t4gE.vitorias,t4gE.empates,t4gE.derrotas,t4gesaldo,t4gepontos,t4gE.ngols,t4gE.ngolssofridos)
+
+print()
+
+print("="*55 , '\nFase de Grupos (Grupo F):\n')
+gpF = partidas.comb(GrupoF,n)
+partida1grupoF = []
+partida2grupoF = [] 
+partida3grupoF = []
+partida4grupoF = []
+partida5grupoF = []
+partida6grupoF = []
+partida1grupoF.append(gpF[0])
+partida2grupoF.append(gpF[1])
+partida3grupoF.append(gpF[2])
+partida4grupoF.append(gpF[3])
+partida5grupoF.append(gpF[4])
+partida6grupoF.append(gpF[5])
+
+p1gpFsaida = partidas.delist(partida1grupoF)
+p2gpFsaida = partidas.delist(partida2grupoF)
+p3gpFsaida = partidas.delist(partida3grupoF)
+p4gpFsaida = partidas.delist(partida4grupoF)
+p5gpFsaida = partidas.delist(partida5grupoF)
+p6gpFsaida = partidas.delist(partida6grupoF)
+
+print(' x '.join(p1gpFsaida))
+print(' x '.join(p2gpFsaida))
+print(' x '.join(p3gpFsaida))
+print(' x '.join(p4gpFsaida))
+print(' x '.join(p5gpFsaida))
+print(' x '.join(p6gpFsaida))
+print("="*55,"\nResultados das partidas do grupo F\n")
+
+placaraj1gF = jogo.placar(ngolst1,ngolst2)
+pj1gFt1 = placaraj1gF[0]
+pj1gFt2 = placaraj1gF[1]
+jogo1 = jogo.juego(p1gpFsaida[0],p1gpFsaida[1],pj1gFt1,pj1gFt2)
+for i in range(1):  
+  if pj1gFt1>pj1gFt2:
+    vit1+=1
+    derrt2+=1
+  elif pj1gFt1 == pj1gFt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  t1gF = time(p1gpFsaida[0],vit1,empt1,derrt1,pj1gFt1,pj1gFt2)
+  t2gF = time(p1gpFsaida[1],vit2,empt2,derrt2,pj1gFt2,pj1gFt1)
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+placarj2gF = jogo.placar(ngolst1,ngolst2)
+pj2gFt1 = placarj2gF[0]
+pj2gFt2 = placarj2gF[1]
+jogo2 = jogo.juego(p2gpFsaida[0],p2gpFsaida[1],pj2gFt1,pj2gFt2)
+for i in range(1):  
+  if pj2gFt1>pj2gFt2:
+    vit1+=1
+    derrt2+=1
+  elif pj2gFt1 == pj2gFt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  
+  t1gF.vitorias+=vit1
+  t1gF.empates+=empt1
+  t1gF.derrotas+=derrt1
+  t1gF.ngols +=pj2gFt1
+  t1gF.ngolssofridos +=pj2gFt2
+  t3gF = time(p2gpFsaida[1],vit2,empt2,derrt2,pj2gFt2,pj2gFt1)
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+placarj3gF = jogo.placar(ngolst1,ngolst2)
+pj3gFt1 = placarj3gF[0]
+pj3gFt2 = placarj3gF[1]
+jogo3 = jogo.juego(p3gpFsaida[0],p3gpFsaida[1],pj3gFt1,pj3gFt2)
+for i in range(1):
+  if pj3gFt1>pj3gFt2:
+    vit1+=1
+    derrt2+=1
+  elif pj3gFt1 == pj3gFt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  t1gF.vitorias+=vit1
+  t1gF.empates+=empt1
+  t1gF.derrotas+=derrt1
+  t1gF.ngols += pj3gFt1
+  t1gF.ngolssofridos +=pj3gFt2
+  t4gF = time(p3gpFsaida[1],vit2,empt2,derrt2,pj3gFt2,pj3gFt1)
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+placarj4gF = jogo.placar(ngolst1,ngolst2)
+pj4gFt1 = placarj4gF[0]
+pj4gFt2 = placarj4gF[1]
+jogo4 = jogo.juego(p4gpFsaida[0],p4gpFsaida[1],pj4gFt1,pj4gFt2)
+for i in range(1):
+  if pj4gFt1>pj4gFt2:
+    vit1+=1
+    derrt2+=1
+  elif pj4gFt1 == pj4gFt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  
+  t2gF.vitorias+=vit1
+  t2gF.empates+=empt1
+  t2gF.derrotas+=derrt1
+  t2gF.ngols +=pj4gFt1
+  t2gF.ngolssofridos+=pj4gFt2
+  t3gF.vitorias+=vit2
+  t3gF.empates+=empt2
+  t3gF.derrotas+=derrt2
+  t3gF.ngols +=pj4gFt2
+  t3gF.ngolssofridos +=pj4gFt1
+  
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+placarj5gF = jogo.placar(ngolst1,ngolst2)
+pj5gFt1 = placarj5gF[0]
+pj5gFt2 = placarj5gF[1]
+jogo5 = jogo.juego(p5gpFsaida[0],p5gpFsaida[1],pj5gFt1,pj5gFt2)
+for i in range(1):
+  if pj5gFt1>pj5gFt2:
+    vit1+=1
+    derrt2+=1
+  elif pj5gFt1 == pj5gFt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  
+  t2gF.vitorias+=vit1
+  t2gF.empates+=empt1
+  t2gF.derrotas+=derrt1
+  t2gF.ngols +=pj5gFt1
+  t2gF.ngolssofridos+=pj5gFt2
+  t4gF.vitorias+=vit2
+  t4gF.empates+=empt2
+  t4gF.derrotas+=derrt2
+  t4gF.ngols +=pj5gFt2
+  t4gF.ngolssofridos +=pj5gFt1
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+placarj6gF = jogo.placar(ngolst1,ngolst2)
+pj6gFt1 = placarj6gF[0]
+pj6gFt2 = placarj6gF[1]
+jogo6 = jogo.juego(p6gpFsaida[0],p6gpFsaida[1],pj6gFt1,pj6gFt2)
+for i in range(1):
+  if pj6gFt1>pj6gFt2:
+    vit1+=1
+    derrt2+=1
+  elif pj6gFt1 == pj6gFt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+    
+  t3gF.vitorias+=vit1
+  t3gF.empates+=empt1
+  t3gF.derrotas+=derrt1
+  t3gF.ngols +=pj6gFt1
+  t3gF.ngolssofridos+=pj6gFt2
+  t4gF.vitorias+=vit2
+  t4gF.empates+=empt2
+  t4gF.derrotas+=derrt2
+  t4gF.ngols +=pj6gFt2
+  t4gF.ngolssofridos +=pj6gFt1
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+print("="*55)
+print("\nResultados finais do grupo F")
+print()
+t1gfsaldo = tabela.saldo(t1gF.ngols,t1gF.ngolssofridos)
+t1gfpontos = tabela.pontos(t1gF.vitorias,t1gF.empates)
+
+t2gfsaldo = tabela.saldo(t2gF.ngols,t2gF.ngolssofridos)
+t2gfpontos = tabela.pontos(t2gF.vitorias,t2gF.empates)
+
+t3gfsaldo = tabela.saldo(t3gF.ngols,t3gF.ngolssofridos)
+t3gfpontos = tabela.pontos(t3gF.vitorias,t3gF.empates)
+
+t4gfsaldo = tabela.saldo(t4gF.ngols,t4gF.ngolssofridos)
+t4gfpontos = tabela.pontos(t4gF.vitorias,t4gF.empates)
+ 
+
+rest1gF = resultados.results(t1gF.nome,t1gF.vitorias,t1gF.empates,t1gF.derrotas,t1gfsaldo,t1gfpontos,t1gF.ngols,t1gF.ngolssofridos)
+
+rest2gf = resultados.results(t2gF.nome,t2gF.vitorias,t2gF.empates,t2gF.derrotas,t2gfsaldo,t2gfpontos,t2gF.ngols,t2gF.ngolssofridos)
+
+rest3gf = resultados.results(t3gF.nome,t3gF.vitorias,t3gF.empates,t3gF.derrotas,t3gfsaldo,t3gfpontos,t3gF.ngols,t3gF.ngolssofridos)
+
+rest4gf = resultados.results(t4gF.nome,t4gF.vitorias,t4gF.empates,t4gF.derrotas,t4gfsaldo,t4gfpontos,t4gF.ngols,t4gF.ngolssofridos)
+
+print()
+
+print("="*55 , '\nFase de Grupos (Grupo G):\n')
+gpG = partidas.comb(GrupoG,n)
+partida1grupoG = []
+partida2grupoG = [] 
+partida3grupoG = []
+partida4grupoG = []
+partida5grupoG = []
+partida6grupoG = []
+partida1grupoG.append(gpG[0])
+partida2grupoG.append(gpG[1])
+partida3grupoG.append(gpG[2])
+partida4grupoG.append(gpG[3])
+partida5grupoG.append(gpG[4])
+partida6grupoG.append(gpG[5])
+
+p1gpGsaida = partidas.delist(partida1grupoG)
+p2gpGsaida = partidas.delist(partida2grupoG)
+p3gpGsaida = partidas.delist(partida3grupoG)
+p4gpGsaida = partidas.delist(partida4grupoG)
+p5gpGsaida = partidas.delist(partida5grupoG)
+p6gpGsaida = partidas.delist(partida6grupoG)
+
+print(' x '.join(p1gpGsaida))
+print(' x '.join(p2gpGsaida))
+print(' x '.join(p3gpGsaida))
+print(' x '.join(p4gpGsaida))
+print(' x '.join(p5gpGsaida))
+print(' x '.join(p6gpGsaida))
+print("="*55,"\nResultados das partidas do grupo G\n")
+
+placaraj1gG = jogo.placar(ngolst1,ngolst2)
+pj1gGt1 = placaraj1gG[0]
+pj1gGt2 = placaraj1gG[1]
+jogo1 = jogo.juego(p1gpGsaida[0],p1gpGsaida[1],pj1gGt1,pj1gGt2)
+for i in range(1):  
+  if pj1gGt1>pj1gGt2:
+    vit1+=1
+    derrt2+=1
+  elif pj1gGt1 == pj1gGt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  t1gG = time(p1gpGsaida[0],vit1,empt1,derrt1,pj1gGt1,pj1gGt2)
+  t2gG = time(p1gpGsaida[1],vit2,empt2,derrt2,pj1gGt2,pj1gGt1)
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+placarj2gG = jogo.placar(ngolst1,ngolst2)
+pj2gGt1 = placarj2gG[0]
+pj2gGt2 = placarj2gG[1]
+jogo2 = jogo.juego(p2gpGsaida[0],p2gpGsaida[1],pj2gGt1,pj2gGt2)
+for i in range(1):  
+  if pj2gGt1>pj2gGt2:
+    vit1+=1
+    derrt2+=1
+  elif pj2gGt1 == pj2gGt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  t1gG.vitorias+=vit1
+  t1gG.empates+=empt1
+  t1gG.derrotas+=derrt1
+  t1gG.ngols +=pj2gGt1
+  t1gG.ngolssofridos +=pj2gGt2
+  t3gG = time(p2gpGsaida[1],vit2,empt2,derrt2,pj2gGt2,pj2gGt1)
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+placarj3gG = jogo.placar(ngolst1,ngolst2)
+pj3gGt1 = placarj3gG[0]
+pj3gGt2 = placarj3gG[1]
+jogo3 = jogo.juego(p3gpGsaida[0],p3gpGsaida[1],pj3gGt1,pj3gGt2)
+for i in range(1):
+  if pj3gGt1>pj3gGt2:
+    vit1+=1
+    derrt2+=1
+  elif pj3gGt1 == pj3gGt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  
+  t1gG.vitorias+=vit1
+  t1gG.empates+=empt1
+  t1gG.derrotas+=derrt1
+  t1gG.ngols += pj3gGt1
+  t1gG.ngolssofridos +=pj3gGt2
+  t4gG = time(p3gpGsaida[1],vit2,empt2,derrt2,pj3gGt2,pj3gGt1)
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+placarj4gG = jogo.placar(ngolst1,ngolst2)
+pj4gGt1 = placarj4gG[0]
+pj4gGt2 = placarj4gG[1]
+jogo4 = jogo.juego(p4gpGsaida[0],p4gpGsaida[1],pj4gGt1,pj4gGt2)
+for i in range(1):
+  if pj4gGt1>pj4gGt2:
+    vit1+=1
+    derrt2+=1
+  elif pj4gGt1 == pj4gGt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  
+  t2gG.vitorias+=vit1
+  t2gG.empates+=empt1
+  t2gG.derrotas+=derrt1
+  t2gG.ngols +=pj4gGt1
+  t2gG.ngolssofridos +=pj4gGt2
+
+  t3gG.vitorias+=vit2
+  t3gG.empates+=empt2
+  t3gG.derrotas+=derrt2
+  t3gG.ngols +=pj4gGt2
+  t3gG.ngolssofridos +=pj4gGt1
+  
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+placarj5gG = jogo.placar(ngolst1,ngolst2)
+pj5gGt1 = placarj5gG[0]
+pj5gGt2 = placarj5gG[1]
+jogo5 = jogo.juego(p5gpGsaida[0],p5gpGsaida[1],pj5gGt1,pj5gGt2)
+for i in range(1):
+  if pj5gGt1>pj5gGt2:
+    vit1+=1
+    derrt2+=1
+  elif pj5gGt1 == pj5gGt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  
+  t2gG.vitorias+=vit1
+  t2gG.empates+=empt1
+  t2gG.derrotas+=derrt1
+  t2gG.ngols +=pj5gGt1
+  t2gG.ngolssofridos +=pj5gGt2
+
+  t4gG.vitorias+=vit2
+  t4gG.empates+=empt2
+  t4gG.derrotas+=derrt2
+  t4gG.ngols +=pj5gGt2
+  t4gG.ngolssofridos +=pj5gGt1
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+placarj6gG = jogo.placar(ngolst1,ngolst2)
+pj6gGt1 = placarj6gG[0]
+pj6gGt2 = placarj6gG[1]
+jogo6 = jogo.juego(p6gpGsaida[0],p6gpGsaida[1],pj6gGt1,pj6gGt2)
+for i in range(1):
+  if pj6gGt1>pj6gGt2:
+    vit1+=1
+    derrt2+=1
+  elif pj6gGt1 == pj6gGt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+    
+  t3gG.vitorias+=vit1
+  t3gG.empates+=empt1
+  t3gG.derrotas+=derrt1
+  t3gG.ngols +=pj6gGt1
+  t3gG.ngolssofridos +=pj6gGt2
+  t4gG.vitorias+=vit2
+  t4gG.empates+=empt2
+  t4gG.derrotas+=derrt2
+  t4gG.ngols +=pj6gGt2
+  t4gG.ngolssofridos +=pj6gGt1
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+print("="*55)
+print("\nResultados finais do grupo G")
+print()
+t1ggsaldo = tabela.saldo(t1gG.ngols,t1gG.ngolssofridos)
+t1ggpontos = tabela.pontos(t1gG.vitorias,t1gG.empates)
+
+t2ggsaldo = tabela.saldo(t2gG.ngols,t2gG.ngolssofridos)
+t2ggpontos = tabela.pontos(t2gG.vitorias,t2gG.empates)
+
+t3ggsaldo = tabela.saldo(t3gG.ngols,t3gG.ngolssofridos)
+t3ggpontos = tabela.pontos(t3gG.vitorias,t3gG.empates)
+
+t4ggsaldo = tabela.saldo(t4gG.ngols,t4gG.ngolssofridos)
+t4ggpontos = tabela.pontos(t4gG.vitorias,t4gG.empates)
+ 
+
+rest1gG = resultados.results(t1gG.nome,t1gG.vitorias,t1gG.empates,t1gG.derrotas,t1ggsaldo,t1ggpontos,t1gG.ngols,t1gG.ngolssofridos)
+
+rest2gg = resultados.results(t2gG.nome,t2gG.vitorias,t2gG.empates,t2gG.derrotas,t2ggsaldo,t2ggpontos,t2gG.ngols,t2gG.ngolssofridos)
+
+rest3gg = resultados.results(t3gG.nome,t3gG.vitorias,t3gG.empates,t3gG.derrotas,t3ggsaldo,t3ggpontos,t3gG.ngols,t3gG.ngolssofridos)
+
+rest4gg = resultados.results(t4gG.nome,t4gG.vitorias,t4gG.empates,t4gG.derrotas,t4ggsaldo,t4ggpontos,t4gG.ngols,t4gG.ngolssofridos)
+
+print()
+
+print("="*55 , '\nFase de Grupos (Grupo H):\n')
+gpH = partidas.comb(GrupoH,n)
+partida1grupoH = []
+partida2grupoH = [] 
+partida3grupoH = []
+partida4grupoH = []
+partida5grupoH = []
+partida6grupoH = []
+partida1grupoH.append(gpH[0])
+partida2grupoH.append(gpH[1])
+partida3grupoH.append(gpH[2])
+partida4grupoH.append(gpH[3])
+partida5grupoH.append(gpH[4])
+partida6grupoH.append(gpH[5])
+
+p1gpHsaida = partidas.delist(partida1grupoH)
+p2gpHsaida = partidas.delist(partida2grupoH)
+p3gpHsaida = partidas.delist(partida3grupoH)
+p4gpHsaida = partidas.delist(partida4grupoH)
+p5gpHsaida = partidas.delist(partida5grupoH)
+p6gpHsaida = partidas.delist(partida6grupoH)
+
+print(' x '.join(p1gpHsaida))
+print(' x '.join(p2gpHsaida))
+print(' x '.join(p3gpHsaida))
+print(' x '.join(p4gpHsaida))
+print(' x '.join(p5gpHsaida))
+print(' x '.join(p6gpHsaida))
+print("="*55,"\nResultados das partidas do grupo H\n")
+
+placaraj1gH = jogo.placar(ngolst1,ngolst2)
+pj1gHt1 = placaraj1gH[0]
+pj1gHt2 = placaraj1gH[1]
+jogo1 = jogo.juego(p1gpHsaida[0],p1gpHsaida[1],pj1gHt1,pj1gHt2)
+for i in range(1):  
+  if pj1gHt1>pj1gHt2:
+    vit1+=1
+    derrt2+=1
+  elif pj1gHt1 == pj1gHt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  t1gH = time(p1gpHsaida[0],vit1,empt1,derrt1,pj1gHt1,pj1gHt2)
+  t2gH = time(p1gpHsaida[1],vit2,empt2,derrt2,pj1gHt2,pj1gHt1)
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+placarj2gH = jogo.placar(ngolst1,ngolst2)
+pj2gHt1 = placarj2gH[0]
+pj2gHt2 = placarj2gH[1]
+jogo2 = jogo.juego(p2gpHsaida[0],p2gpHsaida[1],pj2gHt1,pj2gHt2)
+for i in range(1):  
+  if pj2gHt1>pj2gHt2:
+    vit1+=1
+    derrt2+=1
+  elif pj2gHt1 == pj2gHt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  
+  t1gH.vitorias+=vit1
+  t1gH.empates+=empt1
+  t1gH.derrotas+=derrt1
+  t1gH.ngols +=pj2gHt1
+  t1gH.ngolssofridos +=pj2gHt2
+  t3gH = time(p2gpHsaida[1],vit2,empt2,derrt2,pj2gHt2,pj2gHt1)
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+placarj3gH = jogo.placar(ngolst1,ngolst2)
+pj3gHt1 = placarj3gH[0]
+pj3gHt2 = placarj3gH[1]
+jogo3 = jogo.juego(p3gpHsaida[0],p3gpHsaida[1],pj3gHt1,pj3gHt2)
+for i in range(1):
+  if pj3gHt1>pj3gHt2:
+    vit1+=1
+    derrt2+=1
+  elif pj3gHt1 == pj3gHt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  
+  t1gH.vitorias+=vit1
+  t1gH.empates+=empt1
+  t1gH.derrotas+=derrt1
+  t1gH.ngols += pj3gHt1
+  t1gH.ngolssofridos +=pj3gHt2
+  t4gH = time(p3gpHsaida[1],vit2,empt2,derrt2,pj3gHt2,pj3gHt1)
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+placarj4gH = jogo.placar(ngolst1,ngolst2)
+pj4gHt1 = placarj4gH[0]
+pj4gHt2 = placarj4gH[1]
+jogo4 = jogo.juego(p4gpHsaida[0],p4gpHsaida[1],pj4gHt1,pj4gHt2)
+for i in range(1):
+  if pj4gHt1>pj4gHt2:
+    vit1+=1
+    derrt2+=1
+  elif pj4gHt1 == pj4gHt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  
+  t2gH.vitorias+=vit1
+  t2gH.empates+=empt1
+  t2gH.derrotas+=derrt1
+  t2gH.ngols +=pj4gHt1
+  t2gH.ngolssofridos +=pj4gHt2
+
+  t3gH.vitorias+=vit2
+  t3gH.empates+=empt2
+  t3gH.derrotas+=derrt2
+  t3gH.ngols +=pj4gHt2
+  t3gH.ngolssofridos +=pj4gHt1
+  
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+placarj5gH = jogo.placar(ngolst1,ngolst2)
+pj5gHt1 = placarj5gH[0]
+pj5gHt2 = placarj5gH[1]
+jogo5 = jogo.juego(p5gpHsaida[0],p5gpHsaida[1],pj5gHt1,pj5gHt2)
+for i in range(1):
+  if pj5gHt1>pj5gHt2:
+    vit1+=1
+    derrt2+=1
+  elif pj5gHt1 == pj5gHt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  
+  t2gH.vitorias+=vit1
+  t2gH.empates+=empt1
+  t2gH.derrotas+=derrt1
+  t2gH.ngols +=pj5gHt1
+  t2gH.ngolssofridos +=pj5gHt2
+
+  t4gH.vitorias+=vit2
+  t4gH.empates+=empt2
+  t4gH.derrotas+=derrt2
+  t4gH.ngols +=pj5gHt2
+  t4gH.ngolssofridos +=pj5gHt1
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+placarj6gH = jogo.placar(ngolst1,ngolst2)
+pj6gHt1 = placarj6gH[0]
+pj6gHt2 = placarj6gH[1]
+jogo6 = jogo.juego(p6gpHsaida[0],p6gpHsaida[1],pj6gHt1,pj6gHt2)
+for i in range(1):
+  if pj6gHt1>pj6gHt2:
+    vit1+=1
+    derrt2+=1
+  elif pj6gHt1 == pj6gHt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+    derrt1+=1
+  t3gH.vitorias+=vit1
+  t3gH.empates+=empt1
+  t3gH.derrotas+=derrt1
+  t3gH.ngols +=pj6gHt1
+  t3gH.ngolssofridos +=pj6gHt2
+
+  t4gH.vitorias+=vit2
+  t4gH.empates+=empt2
+  t4gH.derrotas+=derrt2
+  t4gH.ngols +=pj6gHt2
+  t4gH.ngolssofridos +=pj6gHt1
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+  derrt1 = 0
+  derrt2 = 0
+
+print("="*55)
+print("\nResultados finais do Grupo H")
+
+t1ghsaldo = tabela.saldo(t1gH.ngols,t1gH.ngolssofridos)
+t1ghpontos = tabela.pontos(t1gH.vitorias,t1gH.empates)
+
+t2ghsaldo = tabela.saldo(t2gH.ngols,t2gH.ngolssofridos)
+t2ghpontos = tabela.pontos(t2gH.vitorias,t2gH.empates)
+
+t3ghsaldo = tabela.saldo(t3gH.ngols,t3gH.ngolssofridos)
+t3ghpontos = tabela.pontos(t3gH.vitorias,t3gH.empates)
+
+t4ghsaldo = tabela.saldo(t4gH.ngols,t4gH.ngolssofridos)
+t4ghpontos = tabela.pontos(t4gH.vitorias,t4gH.empates)
+
+rest1gh = resultados.results(t1gH.nome,t1gH.vitorias,t1gH.empates,t1gH.derrotas,t1ghsaldo,t1ghpontos,t1gH.ngols,t1gH.ngolssofridos)
+
+rest2gh = resultados.results(t2gH.nome,t2gH.vitorias,t2gH.empates,t2gH.derrotas,t2ghsaldo,t2ghpontos,t2gH.ngols,t2gH.ngolssofridos)
+
+rest3gh = resultados.results(t3gH.nome,t3gH.vitorias,t3gH.empates,t3gH.derrotas,t3ghsaldo,t3ghpontos,t3gH.ngols,t3gH.ngolssofridos)
+
+rest4gh = resultados.results(t4gH.nome,t4gH.vitorias,t4gH.empates,t4gH.derrotas,t4ghsaldo,t4ghpontos,t4gH.ngols,t4gH.ngolssofridos)
+
+import a
+
+print("\n","="*55,"Classificados do grupo A")
+gpA = a.teste(t1gapontos,t2gapontos,t3gapontos,t4gapontos)
+gpac = a.classif(gpA)
+timeCGA = a.selectime((gpac[0]),t1gasaldo,
+t1gA.ngols,t1gA.nome,t1gapontos,t2gasaldo,
+t2gA.ngols,t2gA.nome,t2gapontos,t3gasaldo,
+t3gA.ngols,t3gA.nome,t3gapontos,t4gasaldo,
+t4gA.ngols,t4gA.nome,t4gapontos)
+print(timeCGA,"se classificou em primeiro do grupo!")
+
+timeCGA2 = a.selectime2((gpac[1]),timeCGA,t1gasaldo,
+t1gA.ngols,t1gA.nome,t1gapontos,t2gasaldo,
+t2gA.ngols,t2gA.nome,t2gapontos,t3gasaldo,
+t3gA.ngols,t3gA.nome,t3gapontos,t4gasaldo,
+t4gA.ngols,t4gA.nome,t4gapontos)
+print(timeCGA2,"se classificou em segundo do grupo!")
+
+print("\n","="*55,"Classificados do grupo B")
+gpB = a.teste(t1gbpontos,t2gbpontos,t3gbpontos,t4gbpontos)
+gpbc = a.classif(gpB)
+timeCGB = a.selectime((gpbc[0]),t1gbsaldo,
+t1gB.ngols,t1gB.nome,t1gbpontos,t2gbsaldo,
+t2gB.ngols,t2gB.nome,t2gbpontos,t3gbsaldo,
+t3gB.ngols,t3gB.nome,t3gbpontos,t4gbsaldo,
+t4gB.ngols,t4gB.nome,t4gbpontos)
+print(timeCGB,"se classificou em primeiro do grupo!")
+
+timeCGB2 = a.selectime2((gpbc[1]),timeCGB,t1gbsaldo,
+t1gB.ngols,t1gB.nome,t1gbpontos,t2gbsaldo,
+t2gB.ngols,t2gB.nome,t2gbpontos,t3gbsaldo,
+t3gB.ngols,t3gB.nome,t3gbpontos,t4gbsaldo,
+t4gB.ngols,t4gB.nome,t4gbpontos)
+print(timeCGB2,"se classificou em segundo do grupo!")
+
+print("\n","="*55,"Classificados do grupo C")
+gpC = a.teste(t1gcpontos,t2gcpontos,t3gcpontos,t4gcpontos)
+gpcc = a.classif(gpC)
+timeCGC = a.selectime((gpcc[0]),t1gcsaldo,
+t1gC.ngols,t1gC.nome,t1gcpontos,t2gcsaldo,
+t2gC.ngols,t2gC.nome,t2gcpontos,t3gcsaldo,
+t3gC.ngols,t3gC.nome,t3gcpontos,t4gcsaldo,
+t4gC.ngols,t4gC.nome,t4gcpontos)
+print(timeCGC,"se classificou em primeiro do grupo!")
+
+timeCGC2 = a.selectime2((gpcc[1]),timeCGC,t1gcsaldo,
+t1gC.ngols,t1gC.nome,t1gcpontos,t2gcsaldo,
+t2gC.ngols,t2gC.nome,t2gcpontos,t3gcsaldo,
+t3gC.ngols,t3gC.nome,t3gcpontos,t4gcsaldo,
+t4gC.ngols,t4gC.nome,t4gcpontos)
+print(timeCGC2,"se classificou em segundo do grupo!")
+
+print("\n","="*55,"Classificados do grupo D")
+gpD = a.teste(t1gdpontos,t2gdpontos,t3gdpontos,t4gdpontos)
+gpdc = a.classif(gpD)
+timeCGD = a.selectime((gpdc[0]),t1gcsaldo,
+t1gD.ngols,t1gD.nome,t1gdpontos,t2gcsaldo,
+t2gD.ngols,t2gD.nome,t2gdpontos,t3gcsaldo,
+t3gD.ngols,t3gD.nome,t3gdpontos,t4gcsaldo,
+t4gD.ngols,t4gD.nome,t4gdpontos)
+print(timeCGD,"se classificou em primeiro do grupo!")
+
+timeCGD2 = a.selectime2((gpdc[1]),timeCGD,t1gdsaldo,
+t1gD.ngols,t1gD.nome,t1gdpontos,t2gdsaldo,
+t2gD.ngols,t2gD.nome,t2gdpontos,t3gdsaldo,
+t3gD.ngols,t3gD.nome,t3gdpontos,t4gdsaldo,
+t4gD.ngols,t4gD.nome,t4gdpontos)
+print(timeCGD2,"se classificou em segundo do grupo!")
+
+print("\n","="*55,"Classificados do grupo E")
+gpE = a.teste(t1gepontos,t2gepontos,t3gepontos,t4gepontos)
+gpec = a.classif(gpE)
+timeCGE = a.selectime((gpec[0]),t1gesaldo,
+t1gE.ngols,t1gE.nome,t1gepontos,t2gesaldo,
+t2gE.ngols,t2gE.nome,t2gepontos,t3gesaldo,
+t3gE.ngols,t3gE.nome,t3gepontos,t4gesaldo,
+t4gE.ngols,t4gE.nome,t4gepontos)
+print(timeCGE,"se classificou em primeiro do grupo!")
+
+timeCGE2 = a.selectime2((gpec[1]),timeCGE,t1gesaldo,
+t1gE.ngols,t1gE.nome,t1gepontos,t2gesaldo,
+t2gE.ngols,t2gE.nome,t2gepontos,t3gesaldo,
+t3gE.ngols,t3gE.nome,t3gepontos,t4gesaldo,
+t4gE.ngols,t4gE.nome,t4gepontos)
+print(timeCGE2,"se classificou em segundo do grupo!")
+
+print("\n","="*55,"Classificados do grupo F")
+gpF = a.teste(t1gfpontos,t2gfpontos,t3gfpontos,t4gfpontos)
+gpfc = a.classif(gpF)
+timeCGF = a.selectime((gpfc[0]),t1gfsaldo,
+t1gF.ngols,t1gF.nome,t1gfpontos,t2gfsaldo,
+t2gF.ngols,t2gF.nome,t2gfpontos,t3gfsaldo,
+t3gF.ngols,t3gF.nome,t3gfpontos,t4gfsaldo,
+t4gF.ngols,t4gF.nome,t4gfpontos)
+print(timeCGF,"se classificou em primeiro do grupo!")
+
+timeCGF2 = a.selectime2((gpfc[1]),timeCGF,t1gfsaldo,
+t1gF.ngols,t1gF.nome,t1gfpontos,t2gfsaldo,
+t2gF.ngols,t2gF.nome,t2gfpontos,t3gfsaldo,
+t3gF.ngols,t3gF.nome,t3gfpontos,t4gfsaldo,
+t4gF.ngols,t4gF.nome,t4gfpontos)
+print(timeCGF2,"se classificou em segundo do grupo!")
+
+print("\n","="*55,"Classificados do grupo G")
+gpG = a.teste(t1ggpontos,t2ggpontos,t3ggpontos,t4ggpontos)
+gpgc = a.classif(gpG)
+timeCGG = a.selectime((gpgc[0]),t1ggsaldo,
+t1gG.ngols,t1gG.nome,t1ggpontos,t2ggsaldo,
+t2gG.ngols,t2gG.nome,t2ggpontos,t3ggsaldo,
+t3gG.ngols,t3gG.nome,t3ggpontos,t4ggsaldo,
+t4gG.ngols,t4gG.nome,t4ggpontos)
+print(timeCGG,"se classificou em primeiro do grupo!")
+
+timeCGG2 = a.selectime2((gpgc[1]),timeCGG,t1ggsaldo,
+t1gG.ngols,t1gG.nome,t1ggpontos,t2ggsaldo,
+t2gG.ngols,t2gG.nome,t2ggpontos,t3ggsaldo,
+t3gG.ngols,t3gG.nome,t3ggpontos,t4ggsaldo,
+t4gG.ngols,t4gG.nome,t4ggpontos)
+print(timeCGG2,"se classificou em segundo do grupo!")
+
+print("\n","="*55,"Classificados do grupo H")
+gpH = a.teste(t1ghpontos,t2ghpontos,t3ghpontos,t4ghpontos)
+gphc = a.classif(gpH)
+timeCGH = a.selectime((gphc[0]),t1ghsaldo,
+t1gH.ngols,t1gH.nome,t1ghpontos,t2ghsaldo,
+t2gH.ngols,t2gH.nome,t2ghpontos,t3ghsaldo,
+t3gH.ngols,t3gH.nome,t3ghpontos,t4ghsaldo,
+t4gH.ngols,t4gH.nome,t4ghpontos)
+print(timeCGH,"se classificou em primeiro do grupo!")
+
+timeCGH2 = a.selectime2((gphc[1]),timeCGH,t1ghsaldo,
+t1gH.ngols,t1gH.nome,t1ghpontos,t2ghsaldo,
+t2gH.ngols,t2gH.nome,t2ghpontos,t3ghsaldo,
+t3gH.ngols,t3gH.nome,t3ghpontos,t4ghsaldo,
+t4gH.ngols,t4gH.nome,t4ghpontos)
+print(timeCGH2,"se classificou em segundo do grupo!")
+print("="*55)
+
+print("="*55,"\nOitavas de final!\n")
+'''Ojogo1 = jogo.oit(timeCGA,timeCGB2) 
+Ojogo2 = jogo.oit(timeCGC,timeCGD2)
+Ojogo3 = jogo.oit(timeCGE,timeCGF2)
+Ojogo4 = jogo.oit(timeCGG,timeCGH2)
+Ojogo5 = jogo.oit(timeCGB,timeCGA2)
+Ojogo6 = jogo.oit(timeCGD,timeCGC2)
+Ojogo7 = jogo.oit(timeCGF,timeCGE2)
+Ojogo8 = jogo.oit(timeCGH,timeCGG2)'''
+import matamata
+
+placarJ1O = jogo.placar(ngolst1,ngolst2)
+pJ1Ot1 = placarJ1O[0]
+pJ1Ot2 = placarJ1O[1]
+jogo1 = jogo.oit(timeCGA,timeCGB2,pJ1Ot1,pJ1Ot2)
+for i in range(1):  
+  if pJ1Ot1 > pJ1Ot2:
+    vit1+=1
+  elif pJ1Ot1==pJ1Ot2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+  t1OJ1 = tabela.timeoit(timeCGA,vit1,empt1)
+  t2OJ1 = tabela.timeoit(timeCGB2,vit2,empt2)
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+pen = matamata.empt(t1OJ1.nome,t1OJ1.empates,t1OJ1.vitorias,t2OJ1.nome)
+
+placarJ2O = jogo.placar(ngolst1,ngolst2)
+pJ2Ot1 = placarJ2O[0]
+pJ2Ot2 = placarJ2O[1]
+jogo2 = jogo.oit(timeCGC,timeCGD2,pJ2Ot1,pJ2Ot2)
+for i in range(1):  
+  if pJ2Ot1 > pJ2Ot2:
+    vit1+=1
+  elif pJ2Ot1==pJ2Ot2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+  t1OJ2 = tabela.timeoit(timeCGC,vit1,empt1)
+  t2OJ2 = tabela.timeoit(timeCGD2,vit2,empt2)
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+pen = matamata.empt(t1OJ2.nome,t1OJ2.empates,t1OJ2.vitorias,t2OJ2.nome)
+placarJ3O = jogo.placar(ngolst1,ngolst2)
+pJ3Ot1 = placarJ3O[0]
+pJ3Ot2 = placarJ3O[1]
+jogo2 = jogo.oit(timeCGE,timeCGF2,pJ3Ot1,pJ3Ot2)
+for i in range(1):  
+  if pJ3Ot1 > pJ3Ot2:
+    vit1+=1
+  elif pJ3Ot1==pJ3Ot2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+  t1OJ3 = tabela.timeoit(timeCGE,vit1,empt1)
+  t2OJ3 = tabela.timeoit(timeCGF2,vit2,empt2)
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+pen = matamata.empt(t1OJ3.nome,t1OJ3.empates,t1OJ3.vitorias,t2OJ3.nome)
+placarJ4O = jogo.placar(ngolst1,ngolst2)
+pJ4Ot1 = placarJ4O[0]
+pJ4Ot2 = placarJ4O[1]
+jogo2 = jogo.oit(timeCGG,timeCGH2,pJ4Ot1,pJ4Ot2)
+for i in range(1):  
+  if pJ4Ot1 > pJ4Ot2:
+    vit1+=1
+  elif pJ4Ot1==pJ4Ot2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+  t1OJ4 = tabela.timeoit(timeCGG,vit1,empt1)
+  t2OJ4 = tabela.timeoit(timeCGH2,vit2,empt2)
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+pen = matamata.empt(t1OJ4.nome,t1OJ4.empates,t1OJ4.vitorias,t2OJ4.nome)
+placarJ5O = jogo.placar(ngolst1,ngolst2)
+pJ5Ot1 = placarJ5O[0]
+pJ5Ot2 = placarJ5O[1]
+jogo2 = jogo.oit(timeCGB,timeCGA2,pJ5Ot1,pJ5Ot2)
+for i in range(1):  
+  if pJ5Ot1 > pJ5Ot2:
+    vit1+=1
+  elif pJ5Ot1==pJ5Ot2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+  t1OJ5 = tabela.timeoit(timeCGB,vit1,empt1)
+  t2OJ5 = tabela.timeoit(timeCGA2,vit2,empt2)
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+pen = matamata.empt(t1OJ5.nome,t1OJ5.empates,t1OJ5.vitorias,t2OJ5.nome)
+placarJ6O = jogo.placar(ngolst1,ngolst2)
+pJ6Ot1 = placarJ6O[0]
+pJ6Ot2 = placarJ6O[1]
+jogo2 = jogo.oit(timeCGD,timeCGC2,pJ6Ot1,pJ6Ot2)
+for i in range(1):  
+  if pJ6Ot1 > pJ6Ot2:
+    vit1+=1
+  elif pJ6Ot1==pJ6Ot2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+  t1OJ6 = tabela.timeoit(timeCGD,vit1,empt1)
+  t2OJ6 = tabela.timeoit(timeCGC2,vit2,empt2)
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+pen = matamata.empt(t1OJ6.nome,t1OJ6.empates,t1OJ6.vitorias,t2OJ6.nome)
+placarJ7O = jogo.placar(ngolst1,ngolst2)
+pJ7Ot1 = placarJ7O[0]
+pJ7Ot2 = placarJ7O[1]
+jogo2 = jogo.oit(timeCGF,timeCGE2,pJ7Ot1,pJ7Ot2)
+for i in range(1):  
+  if pJ7Ot1 > pJ7Ot2:
+    vit1+=1
+  elif pJ7Ot1==pJ7Ot2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+  t1OJ7 = tabela.timeoit(timeCGF,vit1,empt1)
+  t2OJ7 = tabela.timeoit(timeCGE2,vit2,empt2)
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+pen = matamata.empt(t1OJ7.nome,t1OJ7.empates,t1OJ7.vitorias,t2OJ7.nome)
+placarJ8O = jogo.placar(ngolst1,ngolst2)
+pJ8Ot1 = placarJ8O[0]
+pJ8Ot2 = placarJ8O[1]
+jogo2 = jogo.oit(timeCGH,timeCGG2,pJ8Ot1,pJ8Ot2)
+for i in range(1):  
+  if pJ8Ot1 > pJ8Ot2:
+    vit1+=1
+  elif pJ8Ot1==pJ8Ot2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+  t1OJ8 = tabela.timeoit(timeCGH,vit1,empt1)
+  t2OJ8 = tabela.timeoit(timeCGG2,vit2,empt2)
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+pen = matamata.empt(t1OJ8.nome,t1OJ8.empates,t1OJ8.vitorias,t2OJ8.nome)
+abc1 = matamata.oitVit(t1OJ1.nome,t1OJ1.vitorias,t2OJ1.nome)
+abc2 = matamata.oitVit(t1OJ2.nome,t1OJ2.vitorias,t2OJ2.nome)
+abc3 = matamata.oitVit(t1OJ3.nome,t1OJ3.vitorias,t2OJ3.nome)
+abc4 = matamata.oitVit(t1OJ4.nome,t1OJ4.vitorias,t2OJ4.nome)
+abc5 = matamata.oitVit(t1OJ5.nome,t1OJ5.vitorias,t2OJ5.nome)
+abc6 = matamata.oitVit(t1OJ6.nome,t1OJ6.vitorias,t2OJ6.nome)
+abc7 = matamata.oitVit(t1OJ7.nome,t1OJ7.vitorias,t2OJ7.nome)
+abc8 = matamata.oitVit(t1OJ8.nome,t1OJ8.vitorias,t2OJ8.nome)
+
+resoi = resultados.resoit(abc1,abc2,abc3,abc4,abc5,abc6,abc7,abc8)
+print("\n QUARTAS DE FINAL\n")
+placarJ1Q = jogo.placar(ngolst1,ngolst2)
+pJ1Qt1 = placarJ1Q[0]
+pJ1Qt2 = placarJ1Q[1]
+jogo2 = jogo.oit(abc1,abc2,pJ1Qt1,pJ1Qt2)
+for i in range(1):  
+  if pJ1Qt1 > pJ1Qt2:
+    vit1+=1
+  elif pJ1Qt1==pJ1Qt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+  t1QJ1 = tabela.timeoit(abc1,vit1,empt1)
+  t2QJ1 = tabela.timeoit(abc2,vit2,empt2)
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+pen = matamata.empt(t1QJ1.nome,t1QJ1.empates,t1QJ1.vitorias,t2QJ1.nome)
+placarJ2Q = jogo.placar(ngolst1,ngolst2)
+pJ2Qt1 = placarJ2Q[0]
+pJ2Qt2 = placarJ2Q[1]
+jogo2 = jogo.oit(abc3,abc4,pJ2Qt1,pJ2Qt2)
+for i in range(1):  
+  if pJ2Qt1 > pJ2Qt2:
+    vit1+=1
+  elif pJ2Qt1==pJ2Qt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+  t1QJ2 = tabela.timeoit(abc3,vit1,empt1)
+  t2QJ2 = tabela.timeoit(abc4,vit2,empt2)
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+pen = matamata.empt(t1QJ2.nome,t1QJ2.empates,t1QJ2.vitorias,t2QJ2.nome)
+placarJ3Q = jogo.placar(ngolst1,ngolst2)
+pJ3Qt1 = placarJ3Q[0]
+pJ3Qt2 = placarJ3Q[1]
+jogo2 = jogo.oit(abc5,abc6,pJ3Qt1,pJ3Qt2)
+for i in range(1):  
+  if pJ3Qt1 > pJ3Qt2:
+    vit1+=1
+  elif pJ3Qt1==pJ3Qt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+  t1QJ3 = tabela.timeoit(abc5,vit1,empt1)
+  t2QJ3 = tabela.timeoit(abc6,vit2,empt2)
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+pen = matamata.empt(t1QJ3.nome,t1QJ3.empates,t1QJ3.vitorias,t2QJ3.nome)
+placarJ4Q = jogo.placar(ngolst1,ngolst2)
+pJ4Qt1 = placarJ4Q[0]
+pJ4Qt2 = placarJ4Q[1]
+jogo2 = jogo.oit(abc7,abc8,pJ4Qt1,pJ4Qt2)
+for i in range(1):  
+  if pJ4Qt1 > pJ4Qt2:
+    vit1+=1
+  elif pJ4Qt1==pJ4Qt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+  t1QJ4 = tabela.timeoit(abc7,vit1,empt1)
+  t2QJ4 = tabela.timeoit(abc8,vit2,empt2)
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+pen = matamata.empt(t1QJ4.nome,t1QJ4.empates,t1QJ4.vitorias,t2QJ4.nome)
+qt1 = matamata.oitVit(t1QJ1.nome,t1QJ1.vitorias,t2QJ1.nome)
+qt2 = matamata.oitVit(t1QJ2.nome,t1QJ2.vitorias,t2QJ2.nome)
+qt3 = matamata.oitVit(t1QJ3.nome,t1QJ3.vitorias,t2QJ3.nome)
+qt4 = matamata.oitVit(t1QJ4.nome,t1QJ4.vitorias,t2QJ4.nome)
+resqt = resultados.resquar(qt1,qt2,qt3,qt4)
+print("\n SEMIFINAL\n")
+placarJ1S = jogo.placar(ngolst1,ngolst2)
+pJ1St1 = placarJ1S[0]
+pJ1St2 = placarJ1S[1]
+jogo2 = jogo.oit(qt1,qt2,pJ1St1,pJ1St2)
+for i in range(1):  
+  if pJ1St1 > pJ1St2:
+    vit1+=1
+  elif pJ1St1==pJ1St2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+  t1SJ1 = tabela.timeoit(qt1,vit1,empt1)
+  t2SJ1 = tabela.timeoit(qt2,vit2,empt2)
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+pen = matamata.empt(t1SJ1.nome,t1SJ1.empates,t1SJ1.vitorias,t2SJ1.nome)
+placarJ2S = jogo.placar(ngolst1,ngolst2)
+pJ2St1 = placarJ2S[0]
+pJ2St2 = placarJ2S[1]
+jogo2 = jogo.oit(qt3,qt4,pJ2St1,pJ2St2)
+for i in range(1):  
+  if pJ2St1 > pJ2St2:
+    vit1+=1
+  elif pJ2St1==pJ2St2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+  t1SJ2 = tabela.timeoit(qt3,vit1,empt1)
+  t2SJ2 = tabela.timeoit(qt4,vit2,empt2)
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+pen = matamata.empt(t1SJ2.nome,t1SJ2.empates,t1SJ2.vitorias,t2SJ2.nome)
+st1 = matamata.oitVit(t1SJ1.nome,t1SJ1.vitorias,t2SJ1.nome)
+st2 = matamata.oitVit(t1SJ2.nome,t1SJ2.vitorias,t2SJ2.nome)
+st3 = matamata.final2(t1SJ1.nome,t1SJ1.vitorias,t2SJ1.nome)
+st4 = matamata.final2(t1SJ2.nome,t1SJ2.vitorias,t2SJ2.nome)
+ressemis = resultados.ressemi(st1,st2)
+
+print("\n TERCEIRO LUGAR\n")
+placarJ1T = jogo.placar(ngolst1,ngolst2)
+pJ1Tt1 = placarJ1T[0]
+pJ1Tt2 = placarJ1T[1]
+jogo1 = jogo.oit(st3,st4,pJ1Tt1,pJ1Tt2)
+for i in range(1):  
+  if pJ1Tt1 > pJ1Tt2:
+    vit1+=1
+  elif pJ1Tt1==pJ1Tt2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+  t1TJ1 = tabela.timeoit(st3,vit1,empt1)
+  t2TJ1 = tabela.timeoit(st4,vit2,empt2)
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+pen = matamata.empt(t1TJ1.nome,t1TJ1.empates,t1TJ1.vitorias,t2TJ1.nome)
+tl = matamata.final1(t1TJ1.nome,t1TJ1.vitorias,t2TJ1.nome)
+print("="*55)
+
+
+print("\n FINAL\n")
+placarJ1F = jogo.placar(ngolst1,ngolst2)
+pJ2Ft1 = placarJ1F[0]
+pJ2Ft2 = placarJ1F[1]
+jogo1 = jogo.oit(st1,st2,pJ2Ft1,pJ2Ft2)
+for i in range(1):  
+  if pJ2Ft1 > pJ2Ft2:
+    vit1+=1
+  elif pJ2Ft1==pJ2Ft2:
+    empt1+=1
+    empt2+=1
+  else:
+    vit2+=1
+  t1FJ1 = tabela.timeoit(st1,vit1,empt1)
+  t2FJ1 = tabela.timeoit(st2,vit2,empt2)
+  vit1 = 0
+  vit2 = 0
+  empt1 = 0
+  empt2 = 0
+pen = matamata.emptfinal(t1FJ1.nome,t1FJ1.empates,t1FJ1.vitorias,t2FJ1.nome)
+ft1 = matamata.final1(t1FJ1.nome,t1FJ1.vitorias,t2FJ1.nome)
+ft2 = matamata.final2(t1FJ1.nome,t1FJ1.vitorias,t2FJ1.nome)
+resfinal = resultados.resfinais(ft1,ft2,tl)
