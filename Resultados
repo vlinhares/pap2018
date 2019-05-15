@@ -1,0 +1,49 @@
+def results(nome,vitorias,empates,derrotas,saldo,pontos,ngols,ngolssofridos):
+  print()
+  print(nome,":")
+  print("Vitórias:",vitorias)
+  print("Empates:",empates)
+  print("Derrotas:",derrotas)
+  print("Saldo de gols:",saldo)
+  print("Pontos:",pontos)
+  print("Gols feitos:",ngols)
+  print("Gols Sofridos:",ngolssofridos)
+  print()
+
+def resoit(t1,t2,t3,t4,t5,t6,t7,t8):
+  print("="*55)
+  print("Seleções classificadas para as quartas de final!\n")
+  print(t1)
+  print(t2)
+  print(t3)
+  print(t4)
+  print(t5)
+  print(t6)
+  print(t7)
+  print(t8)
+  print("="*55)
+
+def resquar(t1,t2,t3,t4):
+  print("="*55)
+  print("Seleções classificadas para as semi finais!\n")
+  print(t1)
+  print(t2)
+  print(t3)
+  print(t4)
+  print("="*55)
+
+def ressemi(t1,t2):
+  print("="*55)
+  print("Seleções classificadas para a grande final!\n")
+  print(t1)
+  print(t2)
+  print("="*55)
+
+
+
+def resfinais(t1,t2,t3):
+  print("="*55)
+  print("A seleção que ficou em terceiro lugar foi:",t3)
+  print("A seleção que ficou em segundo lugar foi:",t2)
+  print("A seleção campeã do torneio foi:",t1)
+  print("="*55)
