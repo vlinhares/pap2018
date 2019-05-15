@@ -1,0 +1,20 @@
+class time():
+  def __init__(self, nome, vitorias,empates,derrotas,ngols,ngolssofridos):
+    self.nome = nome
+    self.vitorias = vitorias 
+    self.empates = empates
+    self.derrotas = derrotas
+    self.ngols = ngols
+    self.ngolssofridos = ngolssofridos  
+class timeoit():
+  def __init__(self, nome, vitorias,empates):
+    self.nome = nome
+    self.vitorias = vitorias 
+    self.empates = empates
+ 
+def pontos(vitorias,empates):
+      pontos = vitorias*3 + empates
+      return pontos
+def saldo(ngols,ngolssofridos):
+      saldo = ngols - ngolssofridos
+      return saldo
