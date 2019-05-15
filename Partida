@@ -1,0 +1,37 @@
+import random
+
+def placar(ngolst1,ngolst2):
+  ngolst1 = random.randint(0,7)
+  ngolst2 = random.randint(0,7)
+  return ngolst1, ngolst2
+
+def juego(t1,t2,ngolst1, ngolst2):
+
+  if ngolst1 > ngolst2:
+
+    print("\nA seleção da(o) {} ganhou a partida contra a seleção da(o) {} por um placar de {} a {}" .format(t1,t2,ngolst1,ngolst2))
+    
+  elif ngolst1 == ngolst2:
+
+    print("\nA partida entre {} e {} resultou em um empate com um placar de {} a {}" .format(t1,t2,ngolst1,ngolst2))
+  else:
+
+    print("\nA seleção da(o) {} ganhou a partida contra a {} por um placar de {} a {}" .format(t2,t1,ngolst2,ngolst1))
+
+
+def oit(t1,t2,ngolst1,ngolst2):
+
+  if ngolst1 > ngolst2:
+    
+    print("\nA seleção da(o) {} ganhou a partida contra a seleção da(o) {} por um placar de {} a {}" .format(t1,t2,ngolst1,ngolst2))
+    
+  elif ngolst1 == ngolst2:
+    
+    print("\nA partida entre {} e {} resultou em um empate com um placar de {} a {}" .format(t1,t2,ngolst1,ngolst2))
+
+  else:
+    
+    print("\nA seleção da(o) {} ganhou a partida contra a seleção da(o) {} por um placar de {} a {}" .format(t2,t1,ngolst2,ngolst1))
+
+
+
