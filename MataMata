@@ -1,0 +1,28 @@
+def empt(nomet1,time1,vt1,nomet2):
+  if time1 == 1:
+     print("*A seleção da {} ganhou da seleção da(o) {} numa disputa de penaltis".format(nomet2,nomet1))
+     vt1+=1
+
+def emptfinal(nomet1,time1,vt1,nomet2):
+  if time1 == 1:
+     print("*A seleção da {} ganhou da seleção da(o) {} numa disputa de penaltis".format(nomet2,nomet1))
+     vt1+=1     
+
+def oitVit(time1,vit1,time2):
+  if vit1 > 0:
+    return time1  
+  else:
+    return time2
+    
+def final1(time1,vit1,time2):
+  if vit1 > 0:
+    return time1
+  else:
+    return time2
+
+def final2(time1,vit1,time2):
+  if vit1 <= 0:
+    return time1
+  else:
+    return time2
+
