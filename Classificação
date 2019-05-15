@@ -1,0 +1,126 @@
+def teste(pontost1,pontost2,pontost3,pontost4):
+  pontosgrupo = []
+  pontosgrupo.append(pontost1)
+  pontosgrupo.append(pontost2)
+  pontosgrupo.append(pontost3)
+  pontosgrupo.append(pontost4)
+  return pontosgrupo
+
+def classif(SPontos):
+  arr = []
+  a = SPontos[0]
+  for i in range(len(SPontos)):
+    if a < SPontos[i]:
+      a = SPontos[i]
+  SPontos.remove(a)
+  arr.append(a)
+  j = SPontos[0]
+  for i in range(len(SPontos)):
+    if j < SPontos[i]:
+      j = SPontos[i]
+  SPontos.remove(j)
+  arr.append(j)
+  return arr
+
+
+def selectime(maiorponto,saldot1,golst1,nomet1,ptime1,saldot2,golst2,nomet2,ptime2,saldot3,golst3,nomet3,ptime3,saldot4,golst4,nomet4,ptime4):
+  if maiorponto == ptime1:
+    if ptime1 == ptime2: 
+      if saldot1 > saldot2:
+        return nomet1
+      if saldot1 <= saldot2:
+          if golst1 > golst2:
+            return nomet1
+    elif ptime1==ptime3: 
+      if saldot1 > saldot3:
+        return nomet1
+      if saldot1 <= saldot3:
+          if golst1 > golst3:
+            return nomet1
+    elif ptime1==ptime4:
+      if saldot1 > saldot4:
+        return nomet1
+      if saldot1 <= saldot4:
+          if golst1 > golst4:
+            return nomet1  
+    else:
+      return nomet1
+  if maiorponto == ptime2:
+    if ptime2 == ptime1: 
+      if saldot2 > saldot1:
+        return nomet2
+      if saldot2 <= saldot1:
+          if golst2 > golst1:
+            return nomet2
+    elif ptime2==ptime3: 
+      if saldot2 > saldot3:
+        return nomet2
+      if saldot2 <= saldot3:
+          if golst2 > golst3:
+            return nomet2
+    elif ptime2==ptime4:
+      if saldot2 > saldot4:
+        return nomet2
+      if saldot2 <= saldot4:
+          if golst2 > golst4:
+            return nomet2  
+    else:
+      return nomet2
+  if maiorponto == ptime3:
+    if ptime3 == ptime1: 
+      if saldot3 > saldot1:
+        return nomet3
+      if saldot3 <= saldot1:
+          if golst3 > golst1:
+            return nomet3
+    elif ptime3==ptime2: 
+      if saldot3 > saldot2:
+        return nomet3
+      if saldot3 <= saldot2:
+          if golst3 > golst2:
+            return nomet3
+    elif ptime3==ptime4:
+      if saldot3 > saldot4:
+        return nomet3
+      if saldot3 <= saldot4:
+          if golst3 > golst4:
+            return nomet3  
+    else:
+      return nomet3
+
+  if maiorponto == ptime4:
+    if ptime4 == ptime1: 
+      if saldot4 > saldot1:
+        return nomet4
+      if saldot4 <= saldot1:
+          if golst3 > golst1:
+            return nomet4
+    elif ptime4==ptime2: 
+      if saldot4 > saldot2:
+        return nomet4
+      if saldot4 <= saldot2:
+          if golst3 > golst2:
+            return nomet4
+    elif ptime4==ptime4:
+      if saldot4 > saldot3:
+        return nomet4
+      if saldot4 <= saldot3:
+          if golst3 > golst3:
+            return nomet4  
+    else:
+      return nomet4
+  
+
+def selectime2(segmaiorponto,NomeClassificado,saldot1,golst1,nomet1,ptime1,saldot2,golst2,nomet2,ptime2,saldot3,golst3,nomet3,ptime3,saldot4,golst4,nomet4,ptime4):
+  if nomet1 != NomeClassificado:
+    if segmaiorponto == ptime1:
+        return nomet1
+  if nomet2 != NomeClassificado: 
+    if segmaiorponto == ptime2:     
+        return nomet2  
+  if nomet3 != NomeClassificado:   
+    if segmaiorponto == ptime3:
+        return nomet3
+  if nomet4 != NomeClassificado:
+    if segmaiorponto == ptime4:
+        return nomet4
