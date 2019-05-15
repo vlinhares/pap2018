@@ -1,0 +1,11 @@
+from itertools import combinations, permutations, product, chain
+import itertools
+
+def comb(grupo,n):
+  combinations = []
+  combinations.extend(itertools.combinations(grupo,n))
+  return combinations
+
+def delist(variavel):
+  teste = list(chain(*variavel))
+  return teste
